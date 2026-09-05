@@ -2,13 +2,23 @@
 
 import React from 'react';
 import { TrendingUp, Award, Eye, Flame, Users } from 'lucide-react';
+import { SiteStats } from '@/lib/types';
 
-export default function ResultsSection() {
-  const stats = [
-    { value: '50M+', label: 'Organic Video Views Generated', icon: <Eye className="w-5 h-5 text-blue-400" /> },
-    { value: '88%+', label: 'Average 30s View Retention', icon: <TrendingUp className="w-5 h-5 text-emerald-400" /> },
-    { value: '150+', label: 'High-Retention Reels & Shorts Delivered', icon: <Flame className="w-5 h-5 text-orange-400" /> },
-    { value: '4.9★', label: 'Client Satisfaction Rating', icon: <Award className="w-5 h-5 text-amber-400" /> }
+interface ResultsSectionProps {
+  stats?: SiteStats;
+}
+
+export default function ResultsSection({ stats }: ResultsSectionProps) {
+  const displayViews = stats?.totalViews || '50M+';
+  const displayRetention = stats?.engagement || '88%+';
+  const displayVideos = stats?.videosEdited || '150+';
+  const displayClients = stats?.clientsCount || '35+';
+
+  const statItems = [
+    { value: displayViews, label: 'Organic Video Views Generated', icon: <Eye className="w-5 h-5 text-blue-400" /> },
+    { value: displayRetention, label: 'Average 30s View Retention', icon: <TrendingUp className="w-5 h-5 text-emerald-400" /> },
+    { value: displayVideos, label: 'High-Retention Reels & Shorts Delivered', icon: <Flame className="w-5 h-5 text-orange-400" /> },
+    { value: displayClients, label: 'Happy Global Creators & Brands', icon: <Users className="w-5 h-5 text-amber-400" /> }
   ];
 
   return (
@@ -26,7 +36,7 @@ export default function ResultsSection() {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-          {stats.map((s, idx) => (
+          {statItems.map((s, idx) => (
             <div
               key={idx}
               className="glass-panel p-6 rounded-2xl text-center space-y-2 hover:border-white/20 transition-all"

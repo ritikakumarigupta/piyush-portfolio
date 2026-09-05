@@ -606,5 +606,65 @@
     "heroSubtitle": "Specialized in AI Commercials, Viral Reels, TikTok Ads, and Mahabharat Epic 3D Visuals.",
     "availabilityText": "Open for Projects \u2022 100% Free Creative Consultation"
   },
-  "inquiries": []
+  "inquiries": [],
+  "testimonials": [
+    {
+      "id": "test-1",
+      "name": "Alex Vance",
+      "role": "Brand Director",
+      "company": "Aurabella Skin",
+      "avatar": "/images/piyush-avatar.png",
+      "quote": "Piyush transformed our product video with insane AI visuals and hook editing. Our conversions jumped 3.4x in the first week.",
+      "rating": 5,
+      "project": "Commercial Reel"
+    },
+    {
+      "id": "test-2",
+      "name": "David Ross",
+      "role": "Creator & Founder",
+      "company": "Ross Media",
+      "avatar": "/images/piyush-avatar.png",
+      "quote": "Best short-form editor I've worked with. The pacing, sound effects, and kinetic text keep viewers glued till the last second.",
+      "rating": 5,
+      "project": "Viral Shorts Campaign"
+    }
+  ],
+  "services": [
+    {
+      "id": "serv-1",
+      "title": "Viral Reels & TikTok Ads",
+      "description": "High-retention vertical editing with psychological hooks, kinetic subtitles, dynamic sound design, and viral pacing.",
+      "icon": "Flame",
+      "features": [
+        "Hook Pacing",
+        "Kinetic Subtitles",
+        "Sound SFX",
+        "Color Pop"
+      ]
+    },
+    {
+      "id": "serv-2",
+      "title": "AI Video & Cinematic Commercials",
+      "description": "Photorealistic AI motion sequences, CGI background replacements, 3D product renders, and Hollywood-grade grade.",
+      "icon": "Sparkles",
+      "features": [
+        "AI Motion",
+        "3D Camera VFX",
+        "DaVinci Grading",
+        "4K Render"
+      ]
+    },
+    {
+      "id": "serv-3",
+      "title": "Epic Mythological & 3D VFX",
+      "description": "Battlefield environments, celestial energy effects, divine weapons, and hyper-immersive mythological storytelling.",
+      "icon": "Layers",
+      "features": [
+        "Epic VFX",
+        "Sound Design",
+        "CGI Models",
+        "Story Pacing"
+      ]
+    }
+  ]
 }

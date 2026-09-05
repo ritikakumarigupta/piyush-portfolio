@@ -81,7 +81,7 @@ export default function PortfolioHome({
 
       <main className="flex-grow">
         {/* 2. Hero Section */}
-        <Hero />
+        <Hero stats={stats} />
 
         {/* 3. Featured Work Spotlight */}
         <FeaturedWork
@@ -103,7 +103,7 @@ export default function PortfolioHome({
         <ServicesSection />
 
         {/* 6. Proven Retention Results */}
-        <ResultsSection />
+        <ResultsSection stats={stats} />
 
         {/* 7. About Piyush */}
         <AboutSection />

@@ -59,22 +59,28 @@ export interface SiteSettings {
   tagline: string;
   heroHeadline: string;
   heroSubtitle: string;
-  heroBio: string;
+  heroBio?: string;
   availabilityText: string;
-  aboutBio: string;
-  aboutPhilosophy: string;
-  aboutQuote: string;
-  contactEmail: string;
-  instagramUrl: string;
-  linkedinUrl: string;
-  behanceUrl: string;
+  aboutBio?: string;
+  aboutPhilosophy?: string;
+  aboutQuote?: string;
+  contactEmail?: string;
+  email?: string;
+  phone?: string;
+  whatsapp?: string;
+  instagramUrl?: string;
+  linkedinUrl?: string;
+  behanceUrl?: string;
+  [key: string]: any;
 }
 
 export interface ServiceItem {
   id: string;
   title: string;
-  category: string;
+  category?: string;
   description: string;
-  deliverables: string[];
-  iconName: string;
+  deliverables?: string[];
+  features?: string[];
+  iconName?: string;
+  icon?: string;
 }

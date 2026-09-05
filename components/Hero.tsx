@@ -16,13 +16,20 @@ import {
   Award
 } from 'lucide-react';
 
+import { SiteStats } from '@/lib/types';
+
 interface HeroProps {
   onPlayShowreel?: () => void;
+  stats?: SiteStats;
 }
 
-export default function Hero({ onPlayShowreel }: HeroProps) {
+export default function Hero({ onPlayShowreel, stats }: HeroProps) {
   const [heroVideoMuted, setHeroVideoMuted] = useState(true);
   const heroVideoRef = useRef<HTMLVideoElement | null>(null);
+
+  const displayViews = stats?.totalViews || '50M+';
+  const displayProjects = stats?.videosEdited || '150+';
+  const displayRetention = stats?.engagement || '88%+';
 
   const toggleHeroSound = () => {
     if (heroVideoRef.current) {
@@ -99,7 +106,7 @@ export default function Hero({ onPlayShowreel }: HeroProps) {
             <div className="grid grid-cols-3 gap-2.5 sm:gap-4 max-w-lg mx-auto lg:mx-0 pt-1">
               <div className="glass-panel p-3 sm:p-3.5 rounded-2xl text-center lg:text-left">
                 <div className="text-xl sm:text-3xl font-black text-white flex items-center justify-center lg:justify-start gap-1 font-display">
-                  <span>50M+</span>
+                  <span>{displayViews}</span>
                   <Flame className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange-400" />
                 </div>
                 <div className="text-[9px] sm:text-[11px] font-medium text-neutral-400 uppercase tracking-wider mt-0.5">Total Views</div>
@@ -107,15 +114,15 @@ export default function Hero({ onPlayShowreel }: HeroProps) {
 
               <div className="glass-panel p-3 sm:p-3.5 rounded-2xl text-center lg:text-left">
                 <div className="text-xl sm:text-3xl font-black text-white flex items-center justify-center lg:justify-start gap-1 font-display">
-                  <span>28+</span>
+                  <span>{displayProjects}</span>
                   <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-400" />
                 </div>
-                <div className="text-[9px] sm:text-[11px] font-medium text-neutral-400 uppercase tracking-wider mt-0.5">Real Projects</div>
+                <div className="text-[9px] sm:text-[11px] font-medium text-neutral-400 uppercase tracking-wider mt-0.5">Videos Edited</div>
               </div>
 
               <div className="glass-panel p-3 sm:p-3.5 rounded-2xl text-center lg:text-left">
                 <div className="text-xl sm:text-3xl font-black text-white flex items-center justify-center lg:justify-start gap-1 font-display">
-                  <span>88%+</span>
+                  <span>{displayRetention}</span>
                   <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
                 </div>
                 <div className="text-[9px] sm:text-[11px] font-medium text-neutral-400 uppercase tracking-wider mt-0.5">Avg Retention</div>
