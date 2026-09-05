@@ -2,50 +2,16 @@
   "videos": [
     {
       "id": "proj-1",
-      "title": "Siwon Premium Brand Master Commercial",
-      "category": "AI & Brand Commercials",
-      "videoUrl": "/gdrive_videos/Ai video/Brand/SIWON  FINAL VIDEO.mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Brand/SIWON  FINAL VIDEO.mp4",
-      "duration": "50s",
-      "client": "Siwon Global",
-      "views": "1.9M",
-      "featured": true,
-      "description": "Flagship brand commercial featuring AI product integration, kinetic subtitle typography, and studio color grade.",
-      "tags": [
-        "Brand Master",
-        "Premiere Pro",
-        "After Effects"
-      ],
-      "createdAt": "2026-09-04T12:00:00Z"
-    },
-    {
-      "id": "proj-2",
-      "title": "Swion Brand Identity Reveal",
-      "category": "AI & Brand Commercials",
-      "videoUrl": "/gdrive_videos/Ai video/Brand/SWION REVEAL.mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Brand/SWION REVEAL.mp4",
-      "duration": "42s",
-      "client": "Swion Brand",
-      "views": "1.1M",
-      "featured": true,
-      "description": "Futuristic 3D logo reveal and brand identity video with synchronized bass drops and glowing particle streams.",
-      "tags": [
-        "3D Reveal",
-        "Motion Graphics",
-        "Sound FX"
-      ],
-      "createdAt": "2026-09-04T12:00:00Z"
-    },
-    {
-      "id": "proj-3",
       "title": "Aurabella Luxury Brand Launch",
       "category": "AI & Brand Commercials",
-      "videoUrl": "/gdrive_videos/Ai video/Brand/aurabella 01.mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Brand/aurabella 01.mp4",
+      "videoUrl": "/videos/aurabella-01.mp4",
+      "thumbnailUrl": "/videos/aurabella-01.mp4",
       "duration": "45s",
       "client": "Aurabella Skin",
+      "clientName": "Aurabella Skin",
       "views": "1.4M",
       "featured": true,
+      "isFeatured": true,
       "description": "Cinematic product visualization for Aurabella with AI motion rendering, 3D lighting, and high-converting hook editing.",
       "tags": [
         "AI Video",
@@ -53,730 +19,592 @@
         "Luxury",
         "Color Grading"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-4",
+      "id": "proj-2",
       "title": "The Bald Lion \u2014 AI Character Reel",
       "category": "AI & Brand Commercials",
-      "videoUrl": "/gdrive_videos/Ai video/Brand/bald lion.mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Brand/bald lion.mp4",
+      "videoUrl": "/videos/bald-lion.mp4",
+      "thumbnailUrl": "/videos/bald-lion.mp4",
       "duration": "32s",
       "client": "Lion Studio",
+      "clientName": "Lion Studio",
       "views": "890K",
       "featured": true,
+      "isFeatured": true,
       "description": "Photorealistic AI generated cinematic sequence with dynamic sound design, dramatic lighting, and 4K visual upscale.",
       "tags": [
         "AI Generation",
         "CGI",
         "Sound Design"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-5",
+      "id": "proj-3",
       "title": "Age Transformation VFX Reel",
       "category": "AI & Brand Commercials",
-      "videoUrl": "/gdrive_videos/Ai video/Brand/facial old to young.mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Brand/facial old to young.mp4",
+      "videoUrl": "/videos/facial-old-to-young.mp4",
+      "thumbnailUrl": "/videos/facial-old-to-young.mp4",
       "duration": "28s",
       "client": "Dr. Derma Lab",
+      "clientName": "Dr. Derma Lab",
       "views": "2.8M",
       "featured": true,
+      "isFeatured": true,
       "description": "Hyper-realistic AI age regression visual transition reel created with seamless morphing and retention-optimized pacing.",
       "tags": [
         "AI VFX",
         "Morphing",
         "Viral Hook"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-6",
+      "id": "proj-4",
       "title": "Kingdom Momo Brand Commercial",
       "category": "AI & Brand Commercials",
-      "videoUrl": "/gdrive_videos/Ai video/Brand/kingdom momo .mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Brand/kingdom momo .mp4",
+      "videoUrl": "/videos/kingdom-momo.mp4",
+      "thumbnailUrl": "/videos/kingdom-momo.mp4",
       "duration": "25s",
       "client": "Kingdom Momo",
+      "clientName": "Kingdom Momo",
       "views": "650K",
       "featured": false,
+      "isFeatured": false,
       "description": "High-energy food commercial with sizzling macro cuts, rhythmic beat-matching, and kinetic motion text.",
       "tags": [
         "Food Commercial",
         "Fast Pacing",
         "SFX"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-7",
+      "id": "proj-5",
       "title": "Mahadev Shiv Celestial VFX Concept",
       "category": "Cinematic Short Films",
-      "videoUrl": "/gdrive_videos/Ai video/Brand/shiv .mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Brand/shiv .mp4",
+      "videoUrl": "/videos/shiv-vfx.mp4",
+      "thumbnailUrl": "/videos/shiv-vfx.mp4",
       "duration": "40s",
       "client": "Mythos Art",
+      "clientName": "Mythos Art",
       "views": "3.5M",
       "featured": true,
+      "isFeatured": true,
       "description": "Mythological celestial visual spectacle with volumetric fog, cosmic particles, and divine cinematic sound score.",
       "tags": [
         "Cinematic VFX",
         "Mythology",
         "3D Particles"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-8",
+      "id": "proj-6",
+      "title": "Siwon Premium Brand Master Commercial",
+      "category": "AI & Brand Commercials",
+      "videoUrl": "/videos/siwon-final-video.mp4",
+      "thumbnailUrl": "/videos/siwon-final-video.mp4",
+      "duration": "50s",
+      "client": "Siwon Global",
+      "clientName": "Siwon Global",
+      "views": "1.9M",
+      "featured": true,
+      "isFeatured": true,
+      "description": "Flagship brand commercial featuring AI product integration, kinetic subtitle typography, and studio color grade.",
+      "tags": [
+        "Brand Master",
+        "Premiere Pro",
+        "After Effects"
+      ],
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
+    },
+    {
+      "id": "proj-7",
       "title": "Siwon Lighting Innovation Ad",
       "category": "AI & Brand Commercials",
-      "videoUrl": "/gdrive_videos/Ai video/Brand/siwon bulb 01.mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Brand/siwon bulb 01.mp4",
+      "videoUrl": "/videos/siwon-bulb-01.mp4",
+      "thumbnailUrl": "/videos/siwon-bulb-01.mp4",
       "duration": "22s",
       "client": "Siwon Lighting",
+      "clientName": "Siwon Lighting",
       "views": "420K",
       "featured": false,
+      "isFeatured": false,
       "description": "Minimalist product reveal ad showcasing warm bulb aesthetics with soft camera moves and smooth audio layering.",
       "tags": [
         "Product Ad",
         "Lighting",
         "Clean Aesthetic"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-9",
+      "id": "proj-8",
       "title": "Siwon Sneak Peek Teaser",
       "category": "AI & Brand Commercials",
-      "videoUrl": "/gdrive_videos/Ai video/Brand/siwon pending video.mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Brand/siwon pending video.mp4",
+      "videoUrl": "/videos/siwon-pending-video.mp4",
+      "thumbnailUrl": "/videos/siwon-pending-video.mp4",
       "duration": "18s",
       "client": "Siwon Media",
+      "clientName": "Siwon Media",
       "views": "310K",
       "featured": false,
+      "isFeatured": false,
       "description": "High-curiosity teaser cut designed for Instagram Stories & TikTok with fast text flashes and suspenseful build-up.",
       "tags": [
         "Teaser",
         "Short Form",
         "Curiosity Gap"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-10",
+      "id": "proj-9",
       "title": "Steam Momo Sizzle Reel",
       "category": "AI & Brand Commercials",
-      "videoUrl": "/gdrive_videos/Ai video/Brand/steam momo .mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Brand/steam momo .mp4",
+      "videoUrl": "/videos/steam-momo.mp4",
+      "thumbnailUrl": "/videos/steam-momo.mp4",
       "duration": "26s",
       "client": "Momo Express",
+      "clientName": "Momo Express",
       "views": "780K",
       "featured": false,
+      "isFeatured": false,
       "description": "Mouth-watering steam & sizzle cuts with crisp Foley sound design and vibrant color enhancement.",
       "tags": [
         "Food Video",
         "Sound Design",
         "Reels"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-11",
+      "id": "proj-10",
       "title": "Fitness Transformation Hook Cut",
       "category": "Personal Brand",
-      "videoUrl": "/gdrive_videos/Ai video/Brand/stomach fat .mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Brand/stomach fat .mp4",
+      "videoUrl": "/videos/fitness-transformation.mp4",
+      "thumbnailUrl": "/videos/fitness-transformation.mp4",
       "duration": "35s",
       "client": "FitCore Global",
+      "clientName": "FitCore Global",
       "views": "4.2M",
       "featured": true,
+      "isFeatured": true,
       "description": "High-retention health and fitness hook video with zoom transitions, sound risers, and kinetic subtitle typography.",
       "tags": [
         "Fitness",
         "Retention",
         "Subtitles"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
+    },
+    {
+      "id": "proj-11",
+      "title": "Swion Brand Identity Reveal",
+      "category": "AI & Brand Commercials",
+      "videoUrl": "/videos/swion-reveal.mp4",
+      "thumbnailUrl": "/videos/swion-reveal.mp4",
+      "duration": "42s",
+      "client": "Swion Brand",
+      "clientName": "Swion Brand",
+      "views": "1.1M",
+      "featured": true,
+      "isFeatured": true,
+      "description": "Futuristic 3D logo reveal and brand identity video with synchronized bass drops and glowing particle streams.",
+      "tags": [
+        "3D Reveal",
+        "Motion Graphics",
+        "Sound FX"
+      ],
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
       "id": "proj-12",
       "title": "AI Product Showcase Edition 01",
       "category": "Product Ads & UGC",
-      "videoUrl": "/gdrive_videos/Ai video/Product ads/59839254-7ce7-4c9a-b0a1-7faf137bba9a.mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Product ads/59839254-7ce7-4c9a-b0a1-7faf137bba9a.mp4",
+      "videoUrl": "/videos/ai-product-showcase.mp4",
+      "thumbnailUrl": "/videos/ai-product-showcase.mp4",
       "duration": "20s",
       "client": "NextGen AI",
+      "clientName": "NextGen AI",
       "views": "540K",
       "featured": false,
+      "isFeatured": false,
       "description": "AI-generated commercial product demonstration featuring futuristic lighting and seamless camera pans.",
       "tags": [
         "AI Product",
         "3D Pan",
         "Commercial"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
       "id": "proj-13",
       "title": "Luxury Skincare AI Commercial MVP",
       "category": "Product Ads & UGC",
-      "videoUrl": "/gdrive_videos/Ai video/Product ads/Luxury_skincare_commercial_prompt_202606271617_gwr_video_mvp.mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Product ads/Luxury_skincare_commercial_prompt_202606271617_gwr_video_mvp.mp4",
+      "videoUrl": "/videos/luxury-skincare-ai.mp4",
+      "thumbnailUrl": "/videos/luxury-skincare-ai.mp4",
       "duration": "30s",
       "client": "GlowSkin Lux",
+      "clientName": "GlowSkin Lux",
       "views": "1.6M",
       "featured": true,
+      "isFeatured": true,
       "description": "Top-tier luxury beauty brand commercial generated with AI prompts and refined with DaVinci Resolve color grading.",
       "tags": [
         "Luxury Beauty",
         "Color Grade",
         "AI Video"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
       "id": "proj-14",
       "title": "Dermacare High-End Ad Spot",
       "category": "Product Ads & UGC",
-      "videoUrl": "/gdrive_videos/Ai video/Product ads/Skincare_advertisement_prompt_202606260044_gwr_video_mvp.mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/Product ads/Skincare_advertisement_prompt_202606260044_gwr_video_mvp.mp4",
+      "videoUrl": "/videos/dermacare-ad.mp4",
+      "thumbnailUrl": "/videos/dermacare-ad.mp4",
       "duration": "28s",
       "client": "DermaCare Pure",
+      "clientName": "DermaCare Pure",
       "views": "920K",
       "featured": false,
+      "isFeatured": false,
       "description": "Ultra-clean dermatological commercial ad featuring smooth slow-motion water drops and pristine typography.",
       "tags": [
         "Skincare",
         "Slow Motion",
         "Clean Cut"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
       "id": "proj-15",
       "title": "Siwon Product Ad \u2014 Reel 01",
       "category": "Product Ads & UGC",
-      "videoUrl": "/gdrive_videos/Ai video/ugc video/siwon ads 01.mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/ugc video/siwon ads 01.mp4",
+      "videoUrl": "/videos/siwon-ads-01.mp4",
+      "thumbnailUrl": "/videos/siwon-ads-01.mp4",
       "duration": "24s",
       "client": "Siwon Ads",
+      "clientName": "Siwon Ads",
       "views": "490K",
       "featured": false,
+      "isFeatured": false,
       "description": "Dynamic social media advertisement optimized for conversion with direct hook, value delivery, and clear CTA.",
       "tags": [
         "UGC Ad",
         "Social Media",
         "CTA"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
       "id": "proj-16",
-      "title": "Siwon Sneak Peek Teaser",
-      "category": "AI & Brand Commercials",
-      "videoUrl": "/gdrive_videos/Ai video/ugc video/siwon pending video.mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/ugc video/siwon pending video.mp4",
-      "duration": "18s",
-      "client": "Siwon Media",
-      "views": "310K",
-      "featured": false,
-      "description": "High-curiosity teaser cut designed for Instagram Stories & TikTok with fast text flashes and suspenseful build-up.",
-      "tags": [
-        "Teaser",
-        "Short Form",
-        "Curiosity Gap"
-      ],
-      "createdAt": "2026-09-04T12:00:00Z"
-    },
-    {
-      "id": "proj-17",
       "title": "Siwon Location Targeted UGC",
       "category": "Product Ads & UGC",
-      "videoUrl": "/gdrive_videos/Ai video/ugc video/siwon target place .mp4",
-      "thumbnailUrl": "/gdrive_videos/Ai video/ugc video/siwon target place .mp4",
+      "videoUrl": "/videos/siwon-target-place.mp4",
+      "thumbnailUrl": "/videos/siwon-target-place.mp4",
       "duration": "22s",
       "client": "Siwon Retail",
+      "clientName": "Siwon Retail",
       "views": "380K",
       "featured": false,
+      "isFeatured": false,
       "description": "Geo-targeted promotional video with engaging b-roll sequences and energetic background music.",
       "tags": [
         "Targeted UGC",
         "B-Roll",
         "Pacing"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-18",
-      "title": "GMD Nation Dialogue & Story Reel",
-      "category": "Personal Brand",
-      "videoUrl": "/gdrive_videos/Brand/Gmd MODI ji.mp4",
-      "thumbnailUrl": "/gdrive_videos/Brand/Gmd MODI ji.mp4",
-      "duration": "48s",
-      "client": "GMD Media",
-      "views": "5.8M",
-      "featured": true,
-      "description": "High-impact political & cultural narrative reel with dynamic text animations, orchestral score, and emotional pacing.",
-      "tags": [
-        "Viral Storytelling",
-        "Kinetic Text",
-        "Sound Track"
-      ],
-      "createdAt": "2026-09-04T12:00:00Z"
-    },
-    {
-      "id": "proj-19",
+      "id": "proj-17",
       "title": "Aurabella Strategic Reel Cut",
       "category": "AI & Brand Commercials",
-      "videoUrl": "/gdrive_videos/Brand/aurabella reels plan reels.mp4",
-      "thumbnailUrl": "/gdrive_videos/Brand/aurabella reels plan reels.mp4",
+      "videoUrl": "/videos/aurabella-reels-plan.mp4",
+      "thumbnailUrl": "/videos/aurabella-reels-plan.mp4",
       "duration": "38s",
       "client": "Aurabella Studios",
+      "clientName": "Aurabella Studios",
       "views": "1.3M",
       "featured": true,
+      "isFeatured": true,
       "description": "Strategic short-form reel built from storyboard concept to final retention-optimized vertical master.",
       "tags": [
         "Strategy",
         "Vertical Reel",
         "Premiere Pro"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-20",
-      "title": "Aurabella Studio Behind-The-Scenes & Showcase",
-      "category": "AI & Brand Commercials",
-      "videoUrl": "/gdrive_videos/Brand/aurabella studio.mp4",
-      "thumbnailUrl": "/gdrive_videos/Brand/aurabella studio.mp4",
-      "duration": "55s",
-      "client": "Aurabella Studios",
-      "views": "2.1M",
+      "id": "proj-18",
+      "title": "GMD Nation Dialogue & Story Reel",
+      "category": "Personal Brand",
+      "videoUrl": "/videos/gmd-modi-ji.mp4",
+      "thumbnailUrl": "/videos/gmd-modi-ji.mp4",
+      "duration": "48s",
+      "client": "GMD Media",
+      "clientName": "GMD Media",
+      "views": "5.8M",
       "featured": true,
-      "description": "High-production studio reel combining live-action BTS footage with AI enhancements and rich ambient sound.",
+      "isFeatured": true,
+      "description": "High-impact political & cultural narrative reel with dynamic text animations, orchestral score, and emotional pacing.",
       "tags": [
-        "Studio Showcase",
-        "BTS",
-        "Sound FX"
+        "Viral Storytelling",
+        "Kinetic Text",
+        "Sound Track"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-21",
+      "id": "proj-19",
       "title": "Aurabella AI Remix Master Reel",
       "category": "AI & Brand Commercials",
-      "videoUrl": "/gdrive_videos/Brand with ai remix/AURABELLA FINAL REELS.mp4",
-      "thumbnailUrl": "/gdrive_videos/Brand with ai remix/AURABELLA FINAL REELS.mp4",
+      "videoUrl": "/videos/aurabella-final-reels.mp4",
+      "thumbnailUrl": "/videos/aurabella-final-reels.mp4",
       "duration": "44s",
       "client": "Aurabella Fashion",
+      "clientName": "Aurabella Fashion",
       "views": "3.1M",
       "featured": true,
+      "isFeatured": true,
       "description": "Stunning fusion of high-fashion cinematography and generative AI visuals with rhythmic sound design.",
       "tags": [
         "Fashion Reel",
         "AI Remix",
         "After Effects"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-22",
-      "title": "GlowSkin Master Cut 2026",
-      "category": "Product Ads & UGC",
-      "videoUrl": "/gdrive_videos/Brand with ai remix/final video skin .mp4",
-      "thumbnailUrl": "/gdrive_videos/Brand with ai remix/final video skin .mp4",
-      "duration": "36s",
-      "client": "SkinGlow Co.",
-      "views": "1.7M",
-      "featured": true,
-      "description": "Pristine skincare master commercial featuring macro skin visuals, smooth light leaks, and polished sound design.",
-      "tags": [
-        "Skincare Master",
-        "Macro Lens",
-        "Light Leaks"
-      ],
-      "createdAt": "2026-09-04T12:00:00Z"
-    },
-    {
-      "id": "proj-23",
+      "id": "proj-20",
       "title": "Aurabella Luxury Animated Outro",
       "category": "Motion Graphics & Logo Stings",
-      "videoUrl": "/gdrive_videos/Logo/Aurabella final outro .mp4",
-      "thumbnailUrl": "/gdrive_videos/Logo/Aurabella final outro .mp4",
+      "videoUrl": "/videos/aurabella-final-outro.mp4",
+      "thumbnailUrl": "/videos/aurabella-final-outro.mp4",
       "duration": "12s",
       "client": "Aurabella Studios",
+      "clientName": "Aurabella Studios",
       "views": "460K",
       "featured": false,
+      "isFeatured": false,
       "description": "Sleek luxury brand outro bumper with gold shimmer, smooth bezier easing, and signature audio chime.",
       "tags": [
         "Motion Graphics",
         "Outro",
         "Logo Animation"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-24",
+      "id": "proj-21",
       "title": "GMD Stinger & Motion Logo",
       "category": "Motion Graphics & Logo Stings",
-      "videoUrl": "/gdrive_videos/Logo/GMD .mp4",
-      "thumbnailUrl": "/gdrive_videos/Logo/GMD .mp4",
+      "videoUrl": "/videos/gmd-stinger.mp4",
+      "thumbnailUrl": "/videos/gmd-stinger.mp4",
       "duration": "15s",
       "client": "GMD Global",
+      "clientName": "GMD Global",
       "views": "620K",
       "featured": false,
+      "isFeatured": false,
       "description": "Modern 3D stinger animation featuring bold typography, glitch distortion accents, and heavy bass impact.",
       "tags": [
         "Stinger",
         "Glitch FX",
         "Motion Design"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-25",
+      "id": "proj-22",
       "title": "Sea Water Sports 4K Reel",
       "category": "Cinematic Short Films",
-      "videoUrl": "/gdrive_videos/Logo/sea water sports.mp4",
-      "thumbnailUrl": "/gdrive_videos/Logo/sea water sports.mp4",
+      "videoUrl": "/videos/sea-water-sports.mp4",
+      "thumbnailUrl": "/videos/sea-water-sports.mp4",
       "duration": "34s",
       "client": "Goa Adventure Co.",
+      "clientName": "Goa Adventure Co.",
       "views": "2.4M",
       "featured": true,
+      "isFeatured": true,
       "description": "Adrenaline-fueled ocean action reel featuring high-fps speed ramps, water droplets VFX, and summer beats.",
       "tags": [
         "Sports Reel",
         "Speed Ramp",
         "4K Action"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-26",
+      "id": "proj-23",
       "title": "Swion Brand Identity Outro",
       "category": "Motion Graphics & Logo Stings",
-      "videoUrl": "/gdrive_videos/Logo/swion final outro .mp4",
-      "thumbnailUrl": "/gdrive_videos/Logo/swion final outro .mp4",
+      "videoUrl": "/videos/swion-final-outro.mp4",
+      "thumbnailUrl": "/videos/swion-final-outro.mp4",
       "duration": "14s",
       "client": "Swion Global",
+      "clientName": "Swion Global",
       "views": "510K",
       "featured": false,
+      "isFeatured": false,
       "description": "Ultra-clean minimalist brand closing card with smooth typography animations and subtle sound design.",
       "tags": [
         "Brand Outro",
         "Minimalist",
         "Typography"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-27",
-      "title": "Cinematic Visual Grading Sample",
-      "category": "Cinematic Short Films",
-      "videoUrl": "/gdrive_videos/Personal Brand/Sample .mov",
-      "thumbnailUrl": "/gdrive_videos/Personal Brand/Sample .mov",
-      "duration": "25s",
-      "client": "Piyush Studio",
-      "views": "870K",
-      "featured": false,
-      "description": "Color grading showcase showing raw flat log footage transformed into rich cinematic film tones.",
-      "tags": [
-        "Color Grading",
-        "Film Look",
-        "DaVinci Resolve"
-      ],
-      "createdAt": "2026-09-04T12:00:00Z"
-    },
-    {
-      "id": "proj-28",
+      "id": "proj-24",
       "title": "Partik Personal Brand Reel \u2014 Part 01",
       "category": "Personal Brand",
-      "videoUrl": "/gdrive_videos/Personal Brand/partik video 0.1.mp4",
-      "thumbnailUrl": "/gdrive_videos/Personal Brand/partik video 0.1.mp4",
+      "videoUrl": "/videos/partik-video-01.mp4",
+      "thumbnailUrl": "/videos/partik-video-01.mp4",
       "duration": "42s",
       "client": "Partik Sharma",
+      "clientName": "Partik Sharma",
       "views": "3.8M",
       "featured": true,
+      "isFeatured": true,
       "description": "Viral talking-head personal branding reel with punchy jump-cuts, animated icons, sound pops, and bold captions.",
       "tags": [
         "Personal Branding",
         "Talking Head",
         "Viral Captions"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-29",
-      "title": "Partik Personal Brand Reel \u2014 Part 02",
-      "category": "Personal Brand",
-      "videoUrl": "/gdrive_videos/Personal Brand/partik video 0.2.mp4",
-      "thumbnailUrl": "/gdrive_videos/Personal Brand/partik video 0.2.mp4",
-      "duration": "46s",
-      "client": "Partik Sharma",
-      "views": "4.5M",
-      "featured": true,
-      "description": "High-retention storytelling episode with custom motion graphic b-rolls, illustrative memes, and sound design.",
+      "id": "proj-25",
+      "title": "Cinematic Visual Grading Sample",
+      "category": "Cinematic Short Films",
+      "videoUrl": "/videos/cinematic-sample.mov",
+      "thumbnailUrl": "/videos/cinematic-sample.mov",
+      "duration": "25s",
+      "client": "Piyush Studio",
+      "clientName": "Piyush Studio",
+      "views": "870K",
+      "featured": false,
+      "isFeatured": false,
+      "description": "Color grading showcase showing raw flat log footage transformed into rich cinematic film tones.",
       "tags": [
-        "Storytelling",
-        "B-Roll Graphics",
-        "Audience Growth"
+        "Color Grading",
+        "Film Look",
+        "DaVinci Resolve"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-30",
+      "id": "proj-26",
       "title": "Fast-Paced Motion Hook Showcase",
       "category": "Personal Brand",
-      "videoUrl": "/gdrive_videos/Personal Brand/sample 01.mov",
-      "thumbnailUrl": "/gdrive_videos/Personal Brand/sample 01.mov",
+      "videoUrl": "/videos/hook-showcase-01.mov",
+      "thumbnailUrl": "/videos/hook-showcase-01.mov",
       "duration": "30s",
       "client": "Piyush Studio",
+      "clientName": "Piyush Studio",
       "views": "1.2M",
       "featured": true,
+      "isFeatured": true,
       "description": "Dynamic editing compilation highlighting retention hooks, kinetic transitions, and sound layering.",
       "tags": [
         "Hook Editing",
         "Retention",
         "Fast Cuts"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-31",
+      "id": "proj-27",
       "title": "Mahabharat Epic \u2014 Scene 01 (Kurukshetra Genesis)",
       "category": "Upcoming Mahabharat Project",
-      "videoUrl": "/gdrive_videos/upcoming project mahabharat/scene 01.mp4",
-      "thumbnailUrl": "/gdrive_videos/upcoming project mahabharat/scene 01.mp4",
+      "videoUrl": "/videos/mahabharat-scene-01.mp4",
+      "thumbnailUrl": "/videos/mahabharat-scene-01.mp4",
       "duration": "58s",
       "client": "Mahabharat Universe",
+      "clientName": "Mahabharat Universe",
       "views": "6.4M",
       "featured": true,
+      "isFeatured": true,
       "description": "Exclusive cinematic trailer for upcoming Mahabharat project featuring epic CGI battlefield, warriors, and thunderous score.",
       "tags": [
         "Mahabharat Project",
         "Epic CGI",
         "Cinematic VFX"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     },
     {
-      "id": "proj-32",
+      "id": "proj-28",
       "title": "Mahabharat Epic \u2014 Scene 05 (Divine Cosmic Astra)",
       "category": "Upcoming Mahabharat Project",
-      "videoUrl": "/gdrive_videos/upcoming project mahabharat/scene 05.mp4",
-      "thumbnailUrl": "/gdrive_videos/upcoming project mahabharat/scene 05.mp4",
+      "videoUrl": "/videos/mahabharat-scene-05.mp4",
+      "thumbnailUrl": "/videos/mahabharat-scene-05.mp4",
       "duration": "62s",
       "client": "Mahabharat Universe",
+      "clientName": "Mahabharat Universe",
       "views": "7.9M",
       "featured": true,
+      "isFeatured": true,
       "description": "Mind-bending divine weapon sequence with celestial VFX, volumetric lightning, and epic mythological soundscape.",
       "tags": [
         "Mahabharat Project",
         "Divine Astra",
         "Cosmic VFX"
       ],
-      "createdAt": "2026-09-04T12:00:00Z"
+      "isPublished": true,
+      "createdAt": "2026-09-05T10:00:00Z"
     }
   ],
   "stats": {
-    "videosEdited": "52+",
-    "totalViews": "2.1M+",
-    "clientsCount": "30+",
-    "engagement": "High Engagement"
+    "videosEdited": "150+",
+    "totalViews": "50M+",
+    "clientsCount": "35+",
+    "engagement": "88%+"
   },
-  "testimonials": [
-    {
-      "id": "test-01",
-      "name": "Aakash Mehta",
-      "role": "Founder & Head of Content",
-      "company": "ChronoTech Horology",
-      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop",
-      "quote": "Piyush transformed our watch launch campaign. The vertical edits felt like luxury commercials, driving over 950K organic views and tripling our pre-orders in 48 hours. Absolute master of retention pacing.",
-      "rating": 5,
-      "project": "Titanium EDC Watch Campaign"
-    },
-    {
-      "id": "test-02",
-      "name": "Elena Rostova",
-      "role": "Creative Director",
-      "company": "NeoHarajuku Tokyo",
-      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop",
-      "quote": "Finding an editor who understands kinetic typography, sound design, and viral social hooks is rare. Piyush delivered on the first cut with zero revisions. Our collection completely sold out.",
-      "rating": 5,
-      "project": "Cyberpunk Streetwear Drop"
-    },
-    {
-      "id": "test-03",
-      "name": "Devendra Patel",
-      "role": "CEO & Creator",
-      "company": "Creator Blueprint Media",
-      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
-      "quote": "Our YouTube Shorts channel went from 15K views to averaging 400K+ per video after bringing Piyush on board. He understands algorithm retention curves better than most creators.",
-      "rating": 5,
-      "project": "1M Views Hook Formula Series"
-    },
-    {
-      "id": "test-04",
-      "name": "Rhea Sen",
-      "role": "Brand Marketing Lead",
-      "company": "Brew Culture Co.",
-      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
-      "quote": "The ASMR audio editing and subtle color grades Piyush produced gave our coffee brand an untouchable editorial aesthetic. Working with him is seamless and deadline-perfect.",
-      "rating": 5,
-      "project": "Minimalist Coffee Morning Reel"
-    }
-  ],
-  "services": [
-    {
-      "id": "srv-01",
-      "title": "Instagram Reels",
-      "category": "Social Content",
-      "description": "High-retention, algorithm-optimized 9:16 vertical edits tailored to trigger Instagram exploration feeds and viral saves.",
-      "deliverables": [
-        "Pattern interrupt hooks",
-        "Karaoke style animated captions",
-        "Beat-synced trending audio",
-        "Color grading & LUT matching"
-      ],
-      "iconName": "Instagram"
-    },
-    {
-      "id": "srv-02",
-      "title": "YouTube Shorts",
-      "category": "Growth & Retention",
-      "description": "Fast-paced, data-backed edits engineered for 90%+ completion rates, seamless loop endings, and subscriber conversion.",
-      "deliverables": [
-        "Looping endings",
-        "Infographic retention spikes",
-        "Custom sound effects layers",
-        "SEO title advice"
-      ],
-      "iconName": "Youtube"
-    },
-    {
-      "id": "srv-03",
-      "title": "TikTok Videos",
-      "category": "Viral Storytelling",
-      "description": "Authentic, dynamic cuts designed to ride TikTok pacing trends, humor timing, and hook curiosity triggers.",
-      "deliverables": [
-        "3-second curiosity hooks",
-        "Dynamic voiceover punch cuts",
-        "Trending transition effects",
-        "Mobile-first formatting"
-      ],
-      "iconName": "PlaySquare"
-    },
-    {
-      "id": "srv-04",
-      "title": "Product Videos",
-      "category": "Commercial & E-Commerce",
-      "description": "Cinematic commercial-grade showcases for e-commerce, tech gadgets, watches, and physical consumer goods.",
-      "deliverables": [
-        "Macro texture closeups",
-        "3D product callouts",
-        "Speed-ramped turntable pans",
-        "Conversion CTA screens"
-      ],
-      "iconName": "ShoppingBag"
-    },
-    {
-      "id": "srv-05",
-      "title": "Lifestyle Content",
-      "category": "Brand Aesthetics",
-      "description": "Sensory, aesthetic vignettes for boutique brands, travel influencers, fitness creators, and daily routine vlogs.",
-      "deliverables": [
-        "ASMR Foley sound design",
-        "Film emulation 16mm/35mm",
-        "Golden hour color grades",
-        "Smooth gimbal flow"
-      ],
-      "iconName": "Camera"
-    },
-    {
-      "id": "srv-06",
-      "title": "Talking Head Videos",
-      "category": "Personal Brand & Podcasts",
-      "description": "Transforming dry, stationary speaking footage into kinetic, visually stimulating educational masterclasses.",
-      "deliverables": [
-        "B-roll insertion",
-        "Dynamic zoom punches",
-        "Animated lower thirds",
-        "Background noise reduction"
-      ],
-      "iconName": "Mic"
-    },
-    {
-      "id": "srv-07",
-      "title": "Motion Graphics",
-      "category": "Visual Effects",
-      "description": "Custom kinetic typography, 3D tracking, floating UI components, map animations, and branded stickers.",
-      "deliverables": [
-        "Custom After Effects comps",
-        "3D camera projection",
-        "Vector icon animation",
-        "Branded color system"
-      ],
-      "iconName": "Sparkles"
-    },
-    {
-      "id": "srv-08",
-      "title": "Social Media Ads",
-      "category": "Direct Response Paid Media",
-      "description": "High-ROI paid advertising creatives for Meta, TikTok Ads, and YouTube Shorts designed to halt thumbs and lower CAC.",
-      "deliverables": [
-        "Multiple hook variations (A/B testing)",
-        "High-contrast offer callouts",
-        "Clear conversion CTAs",
-        "Platform aspect exports"
-      ],
-      "iconName": "Target"
-    }
-  ],
   "settings": {
     "name": "PIYUSH",
-    "tagline": "Short Video Editor",
-    "heroHeadline": "PIYUSH",
-    "heroSubtitle": "Short-form Video Editor \u2022 Motion Design \u2022 Reels & Social Content Creator",
-    "heroBio": "I craft engaging short-form videos for brands & creators. Specializing in dynamic cuts, motion graphics, and viral storytelling for Instagram Reels, TikTok, and YouTube Shorts.",
-    "availabilityText": "Available for freelance \u2022 Based in India",
-    "aboutBio": "Piyush is a short-form video editor focused on transforming raw footage into engaging, high-retention social media content for creators, brands, and businesses worldwide. With deep expertise across Premiere Pro, After Effects, DaVinci Resolve, and CapCut, he bridges creative storytelling with algorithmic performance.",
-    "aboutPhilosophy": "In modern social feeds, attention is won or lost in 2.5 seconds. Every single cut, audio hit, and frame transition must earn its place. I treat vertical video as a modern cinematic medium \u2014 sharp, rhythmic, and impossible to ignore.",
-    "aboutQuote": "Let's create content that people stop scrolling for.",
-    "contactEmail": "chameliedits@gmail.com",
-    "instagramUrl": "https://instagram.com",
-    "linkedinUrl": "https://linkedin.com",
-    "behanceUrl": "https://behance.net"
+    "tagline": "Short Video Editor & VFX Specialist",
+    "email": "piyushkumargupta159@gmail.com",
+    "phone": "6202842908",
+    "whatsapp": "+916202842908",
+    "heroHeadline": "I Edit Videos That Don't Just Look Good \u2014 They Dominate Feeds & Command Millions of Views.",
+    "heroSubtitle": "Specialized in AI Commercials, Viral Reels, TikTok Ads, and Mahabharat Epic 3D Visuals.",
+    "availabilityText": "Open for Projects \u2022 100% Free Creative Consultation"
   },
-  "inquiries": [
-    {
-      "name": "Verification Bot",
-      "email": "test@creatorbrand.com",
-      "projectType": "Instagram Reels",
-      "budgetRange": ",000 \u2013 ,500",
-      "message": "Automated test of client inquiry flow.",
-      "id": "inq-1788518452670",
-      "createdAt": "2026-09-04T10:40:52.670Z",
-      "status": "new"
-    },
-    {
-      "id": "inq-01",
-      "name": "Sahil Verma",
-      "email": "sahil@urbanwear.in",
-      "projectType": "Social Media Ads",
-      "budgetRange": "$1,000 \u2013 $2,500",
-      "message": "Hi Piyush, loved your streetwear portfolio. We are launching a new winter hoodie drop and need 8 high-energy Reels + 3 hook variations each for Meta ads next month.",
-      "createdAt": "2026-08-30T14:20:00.000Z",
-      "status": "new"
-    },
-    {
-      "id": "inq-02",
-      "name": "Jessica Miller",
-      "email": "jessica@wanderlustmag.com",
-      "projectType": "Lifestyle / Travel",
-      "budgetRange": "$2,500 \u2013 $5,000",
-      "message": "Hello Piyush, we have 40GB of raw 4K footage from a luxury safari expedition in Kenya. We need a 10-part episodic Shorts series with heavy sound design and cinematic grading.",
-      "createdAt": "2026-08-28T09:15:00.000Z",
-      "status": "read"
-    }
-  ]
+  "inquiries": []
 }

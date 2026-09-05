@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import Image from 'next/image';
 import { 
   Play, 
   ArrowUpRight, 
@@ -73,7 +72,7 @@ export default function Hero({ onPlayShowreel }: HeroProps) {
           <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
             
             {/* Real Workstation Photo Pill Badge */}
-            <div className="inline-flex items-center gap-2.5 p-1.5 pr-4 rounded-full bg-white/[0.04] border border-white/[0.08] mx-auto lg:mx-0">
+            <div className="inline-flex items-center gap-2.5 p-1.5 pr-4 rounded-full bg-white/[0.04] border border-white/[0.08] mx-auto lg:mx-0 shadow-sm">
               <div className="w-8 h-8 rounded-full overflow-hidden border border-blue-400 shrink-0">
                 <img
                   src="/images/piyush-avatar.png"
@@ -96,7 +95,7 @@ export default function Hero({ onPlayShowreel }: HeroProps) {
               Specialized in <strong className="text-white font-semibold">AI Commercials, Viral Reels, TikTok Ads, and Mahabharat Epic 3D Visuals</strong>. Combining retention-engineered hooks, kinetic typography, and Hollywood-grade sound design.
             </p>
 
-            {/* Quick Metrics Bar (Touch-friendly cards) */}
+            {/* Quick Metrics Bar */}
             <div className="grid grid-cols-3 gap-2.5 sm:gap-4 max-w-lg mx-auto lg:mx-0 pt-1">
               <div className="glass-panel p-3 sm:p-3.5 rounded-2xl text-center lg:text-left">
                 <div className="text-xl sm:text-3xl font-black text-white flex items-center justify-center lg:justify-start gap-1 font-display">
@@ -108,7 +107,7 @@ export default function Hero({ onPlayShowreel }: HeroProps) {
 
               <div className="glass-panel p-3 sm:p-3.5 rounded-2xl text-center lg:text-left">
                 <div className="text-xl sm:text-3xl font-black text-white flex items-center justify-center lg:justify-start gap-1 font-display">
-                  <span>32+</span>
+                  <span>28+</span>
                   <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-400" />
                 </div>
                 <div className="text-[9px] sm:text-[11px] font-medium text-neutral-400 uppercase tracking-wider mt-0.5">Real Projects</div>
@@ -123,18 +122,18 @@ export default function Hero({ onPlayShowreel }: HeroProps) {
               </div>
             </div>
 
-            {/* Action Buttons (Full width on small phones, inline on larger screens) */}
+            {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3 pt-2">
               <a
                 href="#work"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-bold text-neutral-950 bg-gradient-to-r from-blue-400 via-indigo-200 to-white hover:opacity-95 rounded-xl transition-all shadow-xl shadow-blue-500/25 active:scale-[0.98] min-h-[44px] touch-manipulation"
               >
                 <Play className="w-4 h-4 fill-neutral-950" />
-                <span>Explore 32+ Videos</span>
+                <span>Explore 28+ Videos</span>
               </a>
 
               <a
-                href="https://wa.me/?text=Hi%20Piyush,%20I%20saw%20your%20video%20editing%20portfolio%20and%20would%20love%20to%20discuss%20a%20project!"
+                href="https://wa.me/916202842908?text=Hi%20Piyush,%20I%20saw%20your%20video%20editing%20portfolio%20and%20would%20love%20to%20discuss%20a%20project!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-5 py-3.5 text-xs sm:text-sm font-bold text-white bg-emerald-600 hover:bg-emerald-500 rounded-xl transition-all shadow-lg shadow-emerald-600/20 active:scale-[0.98] min-h-[44px] touch-manipulation"
@@ -157,10 +156,10 @@ export default function Hero({ onPlayShowreel }: HeroProps) {
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-9-16 rounded-3xl overflow-hidden glass-panel border border-white/[0.15] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] group">
               
-              {/* Video Element */}
+              {/* Video Element with clean URL */}
               <video
                 ref={heroVideoRef}
-                src="/gdrive_videos/Ai video/Brand/aurabella 01.mp4"
+                src="/videos/aurabella-01.mp4"
                 autoPlay
                 loop
                 muted={heroVideoMuted}
