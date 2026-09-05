@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Lock, ArrowLeft, AlertCircle } from 'lucide-react';
+import { Lock, ArrowLeft, AlertCircle, Eye, EyeOff, CheckCircle2, Shield } from 'lucide-react';
 
 interface AdminLoginProps {
   onLoginSuccess: () => void;
@@ -10,6 +10,7 @@ interface AdminLoginProps {
 
 export default function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
   const [passwordInput, setPasswordInput] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [authError, setAuthError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -27,35 +28,48 @@ export default function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
 
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(data.error || 'Invalid credentials');
+        throw new Error(data.error || 'Invalid admin password');
       }
 
       localStorage.setItem('piyush_admin_auth', data.token);
       onLoginSuccess();
     } catch (err: any) {
-      setAuthError(err.message || 'Login failed. Try again.');
+      setAuthError(err.message || 'Authentication failed. Please check password.');
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#FAFAFA] p-4">
-      <div className="w-full max-w-md bg-white rounded-3xl p-8 border border-neutral-200 shadow-xl">
-        <div className="text-center mb-8">
-          <div className="w-12 h-12 rounded-2xl bg-neutral-950 text-white flex items-center justify-center mx-auto mb-4 shadow-md">
-            <Lock className="w-5 h-5" />
+    <div className="min-h-screen flex items-center justify-center bg-[#0A0A0C] p-4 relative overflow-hidden">
+      
+      {/* Background Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+      <div className="w-full max-w-md bg-[#121218] rounded-3xl p-8 sm:p-10 border border-white/[0.12] shadow-2xl relative z-10 space-y-6">
+        
+        {/* Header Lockup */}
+        <div className="text-center space-y-3">
+          <div className="relative w-16 h-16 rounded-2xl overflow-hidden border-2 border-blue-500/80 mx-auto shadow-xl shadow-blue-500/20">
+            <img
+              src="/images/piyush-avatar.png"
+              alt="Piyush Admin"
+              className="w-full h-full object-cover object-top"
+            />
           </div>
-          <h1 className="text-2xl font-extrabold text-neutral-950 font-display">
-            PIYUSH CMS
-          </h1>
-          <p className="text-xs text-neutral-500 mt-1">
-            Admin &amp; Video Portfolio Management
-          </p>
+          <div>
+            <h1 className="text-2xl font-black text-white font-display flex items-center justify-center gap-2">
+              <span>PIYUSH CMS</span>
+              <Shield className="w-5 h-5 text-blue-400" />
+            </h1>
+            <p className="text-xs text-neutral-400 mt-1">
+              Admin & Video Portfolio Management
+            </p>
+          </div>
         </div>
 
         {authError && (
-          <div className="mb-4 p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">
+          <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-xs flex items-center gap-2">
             <AlertCircle className="w-4 h-4 shrink-0" />
             <span>{authError}</span>
           </div>
@@ -63,30 +77,43 @@ export default function AdminLogin({ onLoginSuccess }: AdminLoginProps) {
 
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
-            <label className="block text-xs font-bold uppercase tracking-wider text-neutral-700 mb-1.5">
+            <label className="block text-[11px] font-bold uppercase tracking-wider text-neutral-300 mb-1.5">
               Admin Password
             </label>
-            <input
-              type="password"
-              required
-              value={passwordInput}
-              onChange={(e) => setPasswordInput(e.target.value)}
-              placeholder="Enter password (piyush2026)"
-              className="w-full px-4 py-3 rounded-xl bg-white border border-neutral-200 text-sm text-neutral-900 focus:outline-none focus:ring-2 focus:ring-neutral-900 shadow-sm"
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                required
+                value={passwordInput}
+                onChange={(e) => setPasswordInput(e.target.value)}
+                placeholder="Enter admin password"
+                className="w-full pl-4 pr-11 py-3 rounded-xl bg-white/[0.04] border border-white/[0.1] text-sm text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500/60 shadow-sm"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-neutral-400 hover:text-white transition-colors"
+                title={showPassword ? "Hide password" : "Show password"}
+              >
+                {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              </button>
+            </div>
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3.5 rounded-xl bg-neutral-950 text-white text-xs font-bold uppercase tracking-wider hover:bg-neutral-800 transition-colors shadow-md active:scale-95 cursor-pointer disabled:opacity-70"
+            className="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-400 via-indigo-300 to-white text-neutral-950 font-bold text-xs uppercase tracking-wider hover:opacity-95 transition-opacity shadow-lg shadow-blue-500/20 active:scale-[0.98] cursor-pointer disabled:opacity-50"
           >
             {loading ? 'Authenticating...' : 'Sign In to Dashboard'}
           </button>
         </form>
 
-        <div className="mt-6 text-center">
-          <Link href="/" className="text-xs text-neutral-500 hover:text-neutral-950 transition-colors inline-flex items-center justify-center gap-1">
+        <div className="pt-2 text-center border-t border-white/[0.08]">
+          <Link 
+            href="/" 
+            className="text-xs text-neutral-400 hover:text-white transition-colors inline-flex items-center justify-center gap-1.5"
+          >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>Back to Public Portfolio</span>
           </Link>
