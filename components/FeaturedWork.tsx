@@ -22,7 +22,7 @@ export default function FeaturedWork({ videos, onOpenVideo }: FeaturedWorkProps)
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full badge-theme border border-blue-500/20 text-theme-primary text-xs font-bold uppercase tracking-wider mb-2">
               <Flame className="w-3.5 h-3.5" />
               <span>Spotlight Showreel</span>
             </div>
@@ -36,7 +36,7 @@ export default function FeaturedWork({ videos, onOpenVideo }: FeaturedWorkProps)
 
           <a
             href="#work"
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-400 hover:text-blue-300 transition-colors group"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-theme-primary hover:text-blue-300 transition-colors group"
           >
             <span>Browse All 32+ Projects</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

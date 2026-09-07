@@ -89,7 +89,7 @@ export default function ContactSection() {
           {/* Left Column: Direct Info (5 cols) */}
           <div className="lg:col-span-5 space-y-6 text-center sm:text-left">
             <div className="space-y-2">
-              <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">
+              <span className="text-xs font-bold text-theme-primary uppercase tracking-wider">
                 Get in Touch
               </span>
               <h2 className="text-2xl sm:text-4xl font-black font-display text-white tracking-tight leading-tight">
@@ -128,7 +128,7 @@ export default function ContactSection() {
                 href="tel:+916202842908"
                 className="flex items-center gap-3.5 p-4 rounded-2xl glass-panel hover:border-blue-500/40 transition-all group active:scale-[0.99] touch-manipulation bg-white/[0.02]"
               >
-                <div className="w-11 h-11 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0">
+                <div className="w-11 h-11 rounded-xl bg-blue-500/20 border border-blue-500/30 flex items-center justify-center text-theme-primary shrink-0">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -224,7 +224,7 @@ export default function ContactSection() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Alex Sharma"
-                        className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500/50 transition-colors"
+                        className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-theme transition-colors"
                       />
                     </div>
 
@@ -236,7 +236,7 @@ export default function ContactSection() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="alex@brand.com"
-                        className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500/50 transition-colors"
+                        className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-theme transition-colors"
                       />
                     </div>
                   </div>
@@ -249,7 +249,7 @@ export default function ContactSection() {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="+91 9876543210"
-                        className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500/50 transition-colors"
+                        className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-theme transition-colors"
                       />
                     </div>
 
@@ -277,14 +277,14 @@ export default function ContactSection() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell me about your footage, vision, timeline, or links..."
-                      className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500/50 transition-colors"
+                      className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-theme transition-colors"
                     />
                   </div>
 
                   <button
                     type="submit"
                     disabled={status === 'submitting'}
-                    className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-blue-400 via-indigo-300 to-white text-neutral-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 hover:opacity-95 transition-opacity shadow-lg shadow-blue-500/20 cursor-pointer disabled:opacity-50 min-h-[44px] touch-manipulation"
+                    className="w-full py-3.5 px-6 rounded-xl btn-theme-primary text-neutral-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 hover:opacity-95 transition-opacity shadow-lg  cursor-pointer disabled:opacity-50 min-h-[44px] touch-manipulation"
                   >
                     <Send className="w-4 h-4" />
                     <span>{status === 'submitting' ? 'Sending Inquiry...' : 'Send Free Consultation Request'}</span>

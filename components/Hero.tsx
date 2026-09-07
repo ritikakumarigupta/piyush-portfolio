@@ -12,9 +12,7 @@ import {
   Flame,
   Layers,
   ChevronLeft,
-  ChevronRight,
-  Film,
-  RotateCw
+  ChevronRight
 } from 'lucide-react';
 import { VideoProject, SiteStats } from '@/lib/types';
 
@@ -24,7 +22,6 @@ interface HeroProps {
   videos?: VideoProject[];
 }
 
-// Complete 28 Fallback Videos List
 const DEFAULT_FALLBACK_VIDEOS: VideoProject[] = [
   {
     "id": "proj-1",
@@ -624,7 +621,6 @@ export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) 
   const [progress, setProgress] = useState(0);
   const heroVideoRef = useRef<HTMLVideoElement | null>(null);
 
-  // Use provided published videos or complete fallback list
   const showcaseVideos = (videos && videos.length > 0)
     ? videos.filter((v) => v.isPublished !== false)
     : DEFAULT_FALLBACK_VIDEOS;
@@ -635,19 +631,16 @@ export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) 
   const displayProjects = stats?.videosEdited || '150+';
   const displayRetention = stats?.engagement || '88%+';
 
-  // Navigate to next video
   const handleNextVideo = useCallback(() => {
     setActiveVideoIndex((prev) => (prev + 1) % showcaseVideos.length);
     setProgress(0);
   }, [showcaseVideos.length]);
 
-  // Navigate to previous video
   const handlePrevVideo = useCallback(() => {
     setActiveVideoIndex((prev) => (prev - 1 + showcaseVideos.length) % showcaseVideos.length);
     setProgress(0);
   }, [showcaseVideos.length]);
 
-  // Update video element source when active video changes
   useEffect(() => {
     if (heroVideoRef.current && currentVideo?.videoUrl) {
       heroVideoRef.current.src = currentVideo.videoUrl;
@@ -656,11 +649,10 @@ export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) 
     }
   }, [activeVideoIndex, currentVideo?.videoUrl]);
 
-  // Auto-advance timer: Every 7 seconds, advance to next video
   useEffect(() => {
     if (!isPlaying) return;
 
-    const intervalTime = 7000; // 7 seconds per showcase preview
+    const intervalTime = 7000;
     const stepTime = 100;
     let elapsed = 0;
 
@@ -715,9 +707,9 @@ export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) 
   return (
     <section className="relative pt-4 pb-12 sm:pt-8 sm:pb-20 md:pt-12 md:pb-24 overflow-hidden">
       
-      {/* Background Ambient Glow Orbs with Deep Black Fade */}
-      <div className="absolute top-10 left-1/4 -translate-x-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
-      <div className="absolute top-40 right-1/4 translate-x-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-purple-600/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      {/* Background Ambient Glow Orbs Reacting to Theme */}
+      <div className="absolute top-10 left-1/4 -translate-x-1/2 w-72 sm:w-96 h-72 sm:h-96 glow-theme-orb rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div className="absolute top-40 right-1/4 translate-x-1/2 w-72 sm:w-96 h-72 sm:h-96 glow-theme-orb rounded-full blur-3xl pointer-events-none -z-10 opacity-70"></div>
 
       <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8">
         
@@ -742,20 +734,20 @@ export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) 
             
             {/* Real Workstation Photo Pill Badge */}
             <div className="inline-flex items-center gap-2.5 p-1.5 pr-4 rounded-full bg-white/[0.03] border border-white/[0.08] mx-auto lg:mx-0 shadow-sm">
-              <div className="w-8 h-8 rounded-full overflow-hidden border border-blue-400 shrink-0">
+              <div className="w-8 h-8 rounded-full overflow-hidden border border-theme shrink-0">
                 <img
                   src="/images/piyush-avatar.png"
                   alt="Piyush at desk"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
-              <span className="text-xs font-bold text-white">Piyush</span>
+              <span className="text-xs font-bold text-white">Piyush Kumar Gupta</span>
               <span className="text-[10px] text-neutral-400 font-medium">| Senior Video Editor</span>
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-display tracking-tight text-white leading-[1.1]">
               I Edit Videos That Don&apos;t Just Look Good — They{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400">
+              <span className="text-theme-gradient">
                 Dominate Feeds &amp; Command Millions of Views.
               </span>
             </h1>
@@ -777,7 +769,7 @@ export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) 
               <div className="glass-panel p-3 sm:p-3.5 rounded-2xl text-center lg:text-left bg-black/40 border-white/[0.08]">
                 <div className="text-xl sm:text-3xl font-black text-white flex items-center justify-center lg:justify-start gap-1 font-display">
                   <span>{displayProjects}</span>
-                  <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-400" />
+                  <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-theme-secondary" />
                 </div>
                 <div className="text-[9px] sm:text-[11px] font-medium text-neutral-400 uppercase tracking-wider mt-0.5">Videos Edited</div>
               </div>
@@ -795,7 +787,7 @@ export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-2.5 sm:gap-3 pt-2">
               <a
                 href="#work"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-bold text-neutral-950 bg-gradient-to-r from-blue-400 via-indigo-200 to-white hover:opacity-95 rounded-xl transition-all shadow-xl shadow-blue-500/25 active:scale-[0.98] min-h-[44px] touch-manipulation"
+                className="btn-theme-primary inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-bold rounded-xl transition-all active:scale-[0.98] min-h-[44px] touch-manipulation"
               >
                 <Play className="w-4 h-4 fill-neutral-950" />
                 <span>Explore All {showcaseVideos.length} Videos</span>
@@ -821,14 +813,14 @@ export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) 
 
           </div>
 
-          {/* Right Column (5 cols): Interactive Floating Reel Showcase Card that Auto-rotates & Plays All 28 Videos */}
+          {/* Right Column (5 cols): Live Showcase Card */}
           <div className="lg:col-span-5 flex flex-col items-center">
             <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-9-16 rounded-3xl overflow-hidden bg-black/90 border border-white/[0.15] shadow-[0_25px_70px_-15px_rgba(0,0,0,0.95)] group">
               
-              {/* Dynamic Top Progress Bar showing auto-rotation countdown */}
+              {/* Dynamic Top Progress Bar */}
               <div className="absolute top-0 inset-x-0 h-1 bg-white/10 z-30">
                 <div 
-                  className="h-full bg-gradient-to-r from-blue-500 to-indigo-400 transition-all duration-100 ease-linear"
+                  className="h-full bg-theme transition-all duration-100 ease-linear"
                   style={{ width: `${progress}%` }}
                 />
               </div>
@@ -866,7 +858,7 @@ export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) 
                     className="p-2 rounded-full bg-black/80 backdrop-blur-md text-white hover:bg-black transition-colors border border-white/20 touch-manipulation min-w-[34px] min-h-[34px] flex items-center justify-center cursor-pointer shadow-md"
                     title={heroVideoMuted ? "Click to Unmute" : "Mute Video"}
                   >
-                    {heroVideoMuted ? <VolumeX className="w-3.5 h-3.5 text-neutral-400" /> : <Volume2 className="w-3.5 h-3.5 text-blue-400" />}
+                    {heroVideoMuted ? <VolumeX className="w-3.5 h-3.5 text-neutral-400" /> : <Volume2 className="w-3.5 h-3.5 text-theme-primary" />}
                   </button>
                 </div>
               </div>
@@ -888,10 +880,10 @@ export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) 
                 <ChevronRight className="w-4 h-4" />
               </button>
 
-              {/* Bottom Video Info Card (Dynamically updates per video!) */}
+              {/* Bottom Video Info Card */}
               <div className="absolute bottom-0 inset-x-0 p-3.5 sm:p-4 bg-gradient-to-t from-black via-black/85 to-transparent z-10 space-y-1.5">
                 <div className="flex items-center gap-2">
-                  <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-blue-500/30 text-blue-300 border border-blue-500/40 truncate max-w-[140px]">
+                  <span className="badge-theme text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md truncate max-w-[140px]">
                     {currentVideo?.category || 'AI Commercial'}
                   </span>
                   <span className="text-[10px] sm:text-[11px] text-neutral-300 font-medium truncate">
@@ -903,13 +895,13 @@ export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) 
                   {currentVideo?.title}
                 </h3>
 
-                {/* Equalizer Wave Bars & Views / Duration */}
+                {/* Equalizer Wave Bars */}
                 <div className="flex items-center justify-between pt-1">
                   <div className="flex items-end gap-1 h-4 sm:h-5">
-                    <span className="w-1 bg-blue-400 rounded-full bar-1"></span>
-                    <span className="w-1 bg-indigo-400 rounded-full bar-2"></span>
-                    <span className="w-1 bg-purple-400 rounded-full bar-3"></span>
-                    <span className="w-1 bg-cyan-400 rounded-full bar-4"></span>
+                    <span className="w-1 rounded-full bar-1"></span>
+                    <span className="w-1 rounded-full bar-2"></span>
+                    <span className="w-1 rounded-full bar-3"></span>
+                    <span className="w-1 rounded-full bar-4"></span>
                   </div>
                   <span className="text-[9px] sm:text-[10px] font-semibold text-neutral-300">
                     {currentVideo?.views || '1.2M'} Views • {currentVideo?.duration || '30s'}
@@ -930,7 +922,7 @@ export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) 
                   }}
                   className={`h-1.5 rounded-full transition-all cursor-pointer ${
                     activeVideoIndex === idx 
-                      ? 'w-6 bg-blue-500' 
+                      ? 'w-6 bg-theme' 
                       : 'w-1.5 bg-neutral-700 hover:bg-neutral-500'
                   }`}
                   title={`Jump to video ${idx + 1}`}
@@ -962,7 +954,7 @@ export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) 
                   key={idx}
                   className="px-3.5 sm:px-4 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.08] text-[11px] sm:text-xs font-semibold text-neutral-300 whitespace-nowrap flex items-center gap-2"
                 >
-                  <Sparkles className="w-3 h-3 text-blue-400" />
+                  <Sparkles className="w-3 h-3 text-theme-primary" />
                   <span>{niche}</span>
                 </div>
               ))}

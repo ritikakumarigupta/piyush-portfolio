@@ -26,7 +26,7 @@ export default function ServicesSection() {
       desc: 'Next-generation AI video generation, character age morphing, seamless transitions, and photorealistic 3D rendering.'
     },
     {
-      icon: <Type className="w-5 h-5 text-blue-400" />,
+      icon: <Type className="w-5 h-5 text-theme-primary" />,
       title: 'Kinetic Subtitles & Typography',
       desc: 'Custom animated subtitles with pop-in emojis, sound synchronized highlights, and branded typography.'
     },

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowLeft, LogOut, Video, Inbox, BarChart2, Shield } from 'lucide-react';
+import { ArrowLeft, LogOut, Video, Inbox, BarChart2, Shield, CheckCircle2 } from 'lucide-react';
 
 interface AdminHeaderProps {
   activeTab: 'videos' | 'inquiries' | 'stats';
@@ -18,9 +18,9 @@ export default function AdminHeader({
   onLogout
 }: AdminHeaderProps) {
   return (
-    <header className="glass-nav sticky top-0 z-40 py-3.5 border-b border-white/[0.08]">
+    <header className="glass-nav sticky top-0 z-40 py-3.5 border-b border-white/[0.08] bg-black/90">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-4">
           
           {/* Brand */}
           <div className="flex items-center gap-3">
@@ -32,17 +32,23 @@ export default function AdminHeader({
               <ArrowLeft className="w-4 h-4" />
             </Link>
             
-            <div className="flex items-center gap-2">
-              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-blue-400 shrink-0">
+            <div className="flex items-center gap-2.5">
+              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-theme shrink-0">
                 <img
                   src="/images/piyush-avatar.png"
-                  alt="Piyush"
+                  alt="Piyush Kumar Gupta"
                   className="w-full h-full object-cover object-top"
                 />
               </div>
-              <span className="font-black text-white font-display text-sm sm:text-base">
-                PIYUSH CMS
-              </span>
+              <div className="hidden sm:block">
+                <div className="flex items-center gap-1.5 font-black text-white font-display text-sm leading-none">
+                  <span>Piyush Kumar Gupta</span>
+                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 fill-blue-400/20" />
+                </div>
+                <div className="text-[10px] text-neutral-400 font-mono mt-0.5">
+                  piyushkumargupta159@gmail.com
+                </div>
+              </div>
             </div>
           </div>
 
@@ -71,7 +77,7 @@ export default function AdminHeader({
               <Inbox className="w-3.5 h-3.5" />
               <span>Inquiries</span>
               {inquiriesCount > 0 && (
-                <span className="px-1.5 py-0.2 rounded-full text-[10px] bg-blue-500 text-white font-bold">
+                <span className="px-1.5 py-0.2 rounded-full text-[10px] bg-theme text-black font-black">
                   {inquiriesCount}
                 </span>
               )}

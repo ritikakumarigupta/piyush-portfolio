@@ -15,7 +15,7 @@ export default function ResultsSection({ stats }: ResultsSectionProps) {
   const displayClients = stats?.clientsCount || '35+';
 
   const statItems = [
-    { value: displayViews, label: 'Organic Video Views Generated', icon: <Eye className="w-5 h-5 text-blue-400" /> },
+    { value: displayViews, label: 'Organic Video Views Generated', icon: <Eye className="w-5 h-5 text-theme-primary" /> },
     { value: displayRetention, label: 'Average 30s View Retention', icon: <TrendingUp className="w-5 h-5 text-emerald-400" /> },
     { value: displayVideos, label: 'High-Retention Reels & Shorts Delivered', icon: <Flame className="w-5 h-5 text-orange-400" /> },
     { value: displayClients, label: 'Happy Global Creators & Brands', icon: <Users className="w-5 h-5 text-amber-400" /> }

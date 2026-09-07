@@ -39,7 +39,7 @@ export default function AboutSection() {
 
                 {/* Bottom Overlay Info */}
                 <div className="absolute bottom-0 inset-x-0 p-3.5 bg-gradient-to-t from-black via-black/70 to-transparent">
-                  <span className="text-xs font-bold text-blue-400">Premiere Pro & DaVinci Suite</span>
+                  <span className="text-xs font-bold text-theme-primary">Premiere Pro & DaVinci Suite</span>
                   <p className="text-[11px] text-neutral-300">Crafting high-retention cuts & Hollywood sound design</p>
                 </div>
               </div>
@@ -51,7 +51,7 @@ export default function AboutSection() {
           <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
             
             <div className="space-y-2">
-              <span className="text-xs font-bold text-blue-400 uppercase tracking-wider">
+              <span className="text-xs font-bold text-theme-primary uppercase tracking-wider">
                 About the Editor
               </span>
               <h2 className="text-2xl sm:text-4xl font-black font-display text-white tracking-tight leading-tight">

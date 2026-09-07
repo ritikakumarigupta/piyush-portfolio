@@ -70,7 +70,7 @@ export default function PortfolioSection({
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full badge-theme border border-blue-500/20 text-theme-primary text-xs font-bold uppercase tracking-wider mb-2">
               <Film className="w-3.5 h-3.5" />
               <span>Complete Video Library</span>
             </div>
@@ -121,7 +121,7 @@ export default function PortfolioSection({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search by title, style, niche, client..."
-                className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500/50 transition-colors"
+                className="w-full pl-10 pr-9 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-theme transition-colors"
               />
               {searchQuery && (
                 <button

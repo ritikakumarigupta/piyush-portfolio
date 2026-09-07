@@ -72,9 +72,9 @@ export default function Navbar() {
             </div>
 
             <div className="flex flex-col">
-              <span className="font-black text-base sm:text-lg tracking-tight text-white font-display flex items-center gap-1.5 group-hover:text-blue-400 transition-colors leading-none">
+              <span className="font-black text-base sm:text-lg tracking-tight text-white font-display flex items-center gap-1.5 group-hover:text-theme-primary transition-colors leading-none">
                 PIYUSH
-                <CheckCircle2 className="w-3.5 h-3.5 text-blue-400 fill-blue-400/20" />
+                <CheckCircle2 className="w-3.5 h-3.5 text-theme-primary fill-blue-400/20" />
               </span>
               <span className="text-[9px] sm:text-[10px] font-bold tracking-widest uppercase text-neutral-400 mt-0.5">
                 Video Editor &amp; VFX
@@ -119,7 +119,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="inline-flex items-center gap-1.5 px-4.5 py-2 text-xs font-bold text-neutral-950 bg-gradient-to-r from-blue-400 via-indigo-300 to-white hover:opacity-95 rounded-xl transition-all shadow-lg shadow-blue-500/20 hover:scale-[1.02]"
+              className="inline-flex items-center gap-1.5 px-4.5 py-2 text-xs font-bold text-neutral-950 btn-theme-primary hover:opacity-95 rounded-xl transition-all shadow-lg  hover:scale-[1.02]"
             >
               <span>Free Consultation</span>
               <ArrowUpRight className="w-3.5 h-3.5" />
