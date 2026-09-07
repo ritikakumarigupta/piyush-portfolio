@@ -1,21 +1,24 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Send, CheckCircle2, MessageCircle, Mail, Phone, MapPin, Sparkles, ArrowUpRight } from 'lucide-react';
+import { Send, CheckCircle2, MessageCircle, Mail, Phone, ArrowUpRight, AlertCircle } from 'lucide-react';
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     projectType: 'Instagram Reels / YouTube Shorts',
     message: ''
   });
 
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('submitting');
+    setErrorMessage('');
 
     try {
       const res = await fetch('/api/inquiries', {
@@ -24,14 +27,24 @@ export default function ContactSection() {
         body: JSON.stringify(formData)
       });
 
-      if (res.ok) {
+      const data = await res.json();
+
+      if (res.ok && data.success) {
         setStatus('success');
-        setFormData({ name: '', email: '', projectType: 'Instagram Reels / YouTube Shorts', message: '' });
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          projectType: 'Instagram Reels / YouTube Shorts',
+          message: ''
+        });
       } else {
         setStatus('error');
+        setErrorMessage(data.error || 'Failed to send inquiry. Please try again.');
       }
-    } catch (err) {
+    } catch (err: any) {
       setStatus('error');
+      setErrorMessage('Network error. Please check your internet connection or message via WhatsApp directly.');
     }
   };
 
@@ -124,24 +137,51 @@ export default function ContactSection() {
             <div className="glass-panel p-5 sm:p-8 rounded-3xl border border-white/[0.1] shadow-2xl">
               
               {status === 'success' ? (
-                <div className="text-center py-10 space-y-3">
-                  <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto" />
-                  <h3 className="text-xl font-bold text-white">Inquiry Received!</h3>
-                  <p className="text-xs text-neutral-400 max-w-sm mx-auto">
-                    Thank you! Piyush will review your project details and get back to you shortly.
-                  </p>
-                  <button
-                    onClick={() => setStatus('idle')}
-                    className="mt-3 px-4 py-2 text-xs font-semibold text-blue-400 hover:underline cursor-pointer"
-                  >
-                    Send another message
-                  </button>
+                <div className="text-center py-10 space-y-4 animate-in fade-in zoom-in duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-400">
+                    <CheckCircle2 className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white">Inquiry Sent Successfully!</h3>
+                    <p className="text-xs sm:text-sm text-neutral-300 max-w-md mx-auto mt-1.5 leading-relaxed">
+                      Thank you! Your project details have reached Piyush. He will review your proposal and get back to you within 2-4 hours.
+                    </p>
+                  </div>
+                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a
+                      href="https://wa.me/916202842908?text=Hi%20Piyush,%20I%20just%20submitted%20a%20project%20inquiry%20on%20your%20portfolio!"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition-colors"
+                    >
+                      <MessageCircle className="w-4 h-4" />
+                      <span>Chat on WhatsApp Now</span>
+                    </a>
+                    <button
+                      onClick={() => setStatus('idle')}
+                      className="px-4 py-2.5 text-xs font-semibold text-neutral-400 hover:text-white transition-colors cursor-pointer"
+                    >
+                      Send another message
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <h3 className="text-base sm:text-lg font-bold text-white font-display mb-1">
-                    Send a Free Project Inquiry
-                  </h3>
+                  <div>
+                    <h3 className="text-base sm:text-lg font-bold text-white font-display mb-1">
+                      Send a Free Project Inquiry
+                    </h3>
+                    <p className="text-xs text-neutral-400">
+                      Fill out the details below and get a free video strategy consultation.
+                    </p>
+                  </div>
+
+                  {status === 'error' && (
+                    <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-xs flex items-center gap-2">
+                      <AlertCircle className="w-4 h-4 shrink-0" />
+                      <span>{errorMessage}</span>
+                    </div>
+                  )}
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
                     <div className="space-y-1">
@@ -152,7 +192,7 @@ export default function ContactSection() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Alex Sharma"
-                        className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500/50"
+                        className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500/50 transition-colors"
                       />
                     </div>
 
@@ -164,34 +204,48 @@ export default function ContactSection() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="alex@brand.com"
-                        className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500/50"
+                        className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500/50 transition-colors"
                       />
                     </div>
                   </div>
 
-                  <div className="space-y-1">
-                    <label className="text-[11px] font-bold text-neutral-300 uppercase">Project Category</label>
-                    <select
-                      value={formData.projectType}
-                      onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
-                      className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-[#14141B] border border-white/[0.08] text-sm sm:text-xs text-white focus:outline-none cursor-pointer"
-                    >
-                      <option value="Instagram Reels / YouTube Shorts">Instagram Reels / YouTube Shorts</option>
-                      <option value="AI Brand Commercial / CGI">AI Brand Commercial / CGI</option>
-                      <option value="Personal Brand & Talking Head">Personal Brand & Talking Head</option>
-                      <option value="Cinematic VFX & Color Grading">Cinematic VFX & Color Grading</option>
-                    </select>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4">
+                    <div className="space-y-1">
+                      <label className="text-[11px] font-bold text-neutral-300 uppercase">Phone / WhatsApp (Optional)</label>
+                      <input
+                        type="tel"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        placeholder="+91 9876543210"
+                        className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500/50 transition-colors"
+                      />
+                    </div>
+
+                    <div className="space-y-1">
+                      <label className="text-[11px] font-bold text-neutral-300 uppercase">Project Category</label>
+                      <select
+                        value={formData.projectType}
+                        onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                        className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-[#14141B] border border-white/[0.08] text-sm sm:text-xs text-white focus:outline-none cursor-pointer"
+                      >
+                        <option value="Instagram Reels / YouTube Shorts">Instagram Reels / YouTube Shorts</option>
+                        <option value="AI Brand Commercial / CGI">AI Brand Commercial / CGI</option>
+                        <option value="Personal Brand & Talking Head">Personal Brand & Talking Head</option>
+                        <option value="Cinematic VFX & Color Grading">Cinematic VFX & Color Grading</option>
+                        <option value="Upcoming Project / Long Term">Upcoming Project / Long Term</option>
+                      </select>
+                    </div>
                   </div>
 
                   <div className="space-y-1">
-                    <label className="text-[11px] font-bold text-neutral-300 uppercase">Project Details / Footage Link</label>
+                    <label className="text-[11px] font-bold text-neutral-300 uppercase">Project Details / Footage Link *</label>
                     <textarea
                       required
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Tell me about your footage, vision, timeline, or links..."
-                      className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500/50"
+                      className="w-full px-3.5 py-3 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.08] text-sm sm:text-xs text-white placeholder-neutral-500 focus:outline-none focus:border-blue-500/50 transition-colors"
                     />
                   </div>
 
@@ -201,7 +255,7 @@ export default function ContactSection() {
                     className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-blue-400 via-indigo-300 to-white text-neutral-950 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 hover:opacity-95 transition-opacity shadow-lg shadow-blue-500/20 cursor-pointer disabled:opacity-50 min-h-[44px] touch-manipulation"
                   >
                     <Send className="w-4 h-4" />
-                    <span>{status === 'submitting' ? 'Sending...' : 'Send Free Consultation Request'}</span>
+                    <span>{status === 'submitting' ? 'Sending Inquiry...' : 'Send Free Consultation Request'}</span>
                   </button>
                 </form>
               )}

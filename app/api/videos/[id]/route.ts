@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getVideoById, updateVideo, deleteVideo } from '@/lib/db';
+import { isAuthorizedAdmin } from '@/lib/auth';
 
 export async function GET(
   request: NextRequest,
@@ -22,6 +23,10 @@ export async function PUT(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    if (!isAuthorizedAdmin(request)) {
+      return NextResponse.json({ error: 'Unauthorized. Admin credentials required.' }, { status: 401 });
+    }
+
     const { id } = await params;
     const body = await request.json();
     const updated = updateVideo(id, body);
@@ -39,6 +44,10 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    if (!isAuthorizedAdmin(request)) {
+      return NextResponse.json({ error: 'Unauthorized. Admin credentials required.' }, { status: 401 });
+    }
+
     const { id } = await params;
     const success = deleteVideo(id);
     if (!success) {

@@ -286,11 +286,11 @@ export default function DirectUploadModal({
                 className="w-full px-3.5 py-2.5 rounded-xl bg-[#14141B] border border-white/[0.08] text-xs text-white focus:outline-none cursor-pointer"
               >
                 <option value="AI & Brand Commercials">AI & Brand Commercials</option>
-                <option value="Personal Brand">Personal Brand</option>
-                <option value="Upcoming Mahabharat Project">Upcoming Mahabharat Project</option>
+                <option value="Viral Shorts & Reels">Viral Shorts & Reels</option>
+                <option value="Upcoming Project">Upcoming Project</option>
                 <option value="Product Ads & UGC">Product Ads & UGC</option>
-                <option value="Cinematic Short Films">Cinematic Short Films</option>
-                <option value="Motion Graphics & Logo Stings">Motion Graphics & Logo Stings</option>
+                <option value="Cinematic Visuals & VFX">Cinematic Visuals & VFX</option>
+                <option value="Personal Brand">Personal Brand</option>
               </select>
             </div>
 

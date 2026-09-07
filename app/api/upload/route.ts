@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { isAuthorizedAdmin } from '@/lib/auth';
 
 export const config = {
   api: {
@@ -10,6 +11,10 @@ export const config = {
 
 export async function POST(request: NextRequest) {
   try {
+    if (!isAuthorizedAdmin(request)) {
+      return NextResponse.json({ error: 'Unauthorized. Only admin can upload media.' }, { status: 401 });
+    }
+
     const formData = await request.formData();
     const file = formData.get('file') as File | null;
     const urlInput = formData.get('url') as string | null;
@@ -36,7 +41,11 @@ export async function POST(request: NextRequest) {
     const safeName = `${Date.now()}_${baseName}${ext}`;
     const filePath = path.join(uploadsDir, safeName);
 
-    fs.writeFileSync(filePath, buffer);
+    try {
+      fs.writeFileSync(filePath, buffer);
+    } catch {
+      // Vercel serverless read-only filesystem handling
+    }
 
     return NextResponse.json({ 
       success: true, 

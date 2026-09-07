@@ -20,7 +20,7 @@ const DEFAULT_SETTINGS: SiteSettings = {
   phone: '6202842908',
   whatsapp: '+916202842908',
   heroHeadline: "I Edit Videos That Don't Just Look Good — They Dominate Feeds & Command Millions of Views.",
-  heroSubtitle: 'Specialized in AI Commercials, Viral Reels, TikTok Ads, and Mahabharat Epic 3D Visuals.',
+  heroSubtitle: 'Specialized in AI Commercials, Viral Reels, TikTok Ads, and Upcoming Epic 3D Visuals.',
   availabilityText: 'Open for Projects • 100% Free Creative Consultation'
 };
 
@@ -373,11 +373,11 @@ export function getInquiries(): ContactInquiry[] {
   return db.inquiries || [];
 }
 
-export function createInquiry(inquiry: Omit<ContactInquiry, 'id' | 'createdAt' | 'status'>): ContactInquiry {
+export function createInquiry(inquiry: Omit<ContactInquiry, 'id' | 'createdAt' | 'status'> & { phone?: string }): ContactInquiry {
   const db = ensureDb();
   const newInq: ContactInquiry = {
     ...inquiry,
-    id: `inq-${Date.now()}`,
+    id: `inq-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
     createdAt: new Date().toISOString(),
     status: 'new'
   };

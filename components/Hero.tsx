@@ -42,7 +42,7 @@ export default function Hero({ onPlayShowreel, stats }: HeroProps) {
     'AI Brand Commercials',
     'Viral Instagram Reels',
     'YouTube Shorts Growth',
-    'Mahabharat 3D Visuals',
+    'Upcoming Epic 3D Projects',
     'Kinetic Typography & Captions',
     'Sound Design & SFX',
     'DaVinci Color Grading',
@@ -99,7 +99,7 @@ export default function Hero({ onPlayShowreel, stats }: HeroProps) {
             </h1>
 
             <p className="text-xs sm:text-base lg:text-lg text-neutral-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-              Specialized in <strong className="text-white font-semibold">AI Commercials, Viral Reels, TikTok Ads, and Mahabharat Epic 3D Visuals</strong>. Combining retention-engineered hooks, kinetic typography, and Hollywood-grade sound design.
+              Specialized in <strong className="text-white font-semibold">AI Commercials, Viral Reels, TikTok Ads, and Upcoming Epic 3D Visuals</strong>. Combining retention-engineered hooks, kinetic typography, and Hollywood-grade sound design.
             </p>
 
             {/* Quick Metrics Bar */}

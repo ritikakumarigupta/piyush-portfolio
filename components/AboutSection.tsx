@@ -85,7 +85,7 @@ export default function AboutSection() {
               </a>
 
               <a
-                href="https://wa.me/?text=Hi%20Piyush,%20let's%20collaborate%20on%20a%20video%20project!"
+                href="https://wa.me/916202842908?text=Hi%20Piyush,%20let's%20collaborate%20on%20a%20video%20project!"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-3.5 text-xs font-bold text-neutral-300 hover:text-white bg-white/[0.04] border border-white/[0.08] rounded-xl transition-colors min-h-[44px] touch-manipulation"

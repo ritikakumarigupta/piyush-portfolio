@@ -64,11 +64,11 @@ export default function AdminVideosTab({
           >
             <option value="All">All Categories</option>
             <option value="AI & Brand Commercials">AI & Brand Commercials</option>
-            <option value="Personal Brand">Personal Brand</option>
-            <option value="Upcoming Mahabharat Project">Upcoming Mahabharat Project</option>
+            <option value="Viral Shorts & Reels">Viral Shorts & Reels</option>
+            <option value="Upcoming Project">Upcoming Project</option>
             <option value="Product Ads & UGC">Product Ads & UGC</option>
-            <option value="Cinematic Short Films">Cinematic Short Films</option>
-            <option value="Motion Graphics & Logo Stings">Motion Graphics & Logo Stings</option>
+            <option value="Cinematic Visuals & VFX">Cinematic Visuals & VFX</option>
+            <option value="Personal Brand">Personal Brand</option>
           </select>
         </div>
 

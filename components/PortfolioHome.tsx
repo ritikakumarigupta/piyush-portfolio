@@ -11,7 +11,6 @@ import AboutSection from './AboutSection';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
 import VideoPlayerModal from './VideoPlayerModal';
-import DirectUploadModal from './DirectUploadModal';
 import { VideoProject, SiteStats, Testimonial, ServiceItem, SiteSettings } from '@/lib/types';
 
 interface PortfolioHomeProps {
@@ -33,51 +32,19 @@ export default function PortfolioHome({
 }: PortfolioHomeProps) {
   const [videoList, setVideoList] = useState<VideoProject[]>(initialVideos || []);
   const [selectedVideo, setSelectedVideo] = useState<VideoProject | null>(null);
-  const [isUploadOpen, setIsUploadOpen] = useState(false);
-  const [isDeleteMode, setIsDeleteMode] = useState(false);
-
-  // Handle Video Upload Success
-  const handleVideoCreated = (newVideo: VideoProject) => {
-    setVideoList((prev) => [newVideo, ...prev]);
-  };
-
-  // Handle Video Delete
-  const handleDeleteVideo = async (eOrVideo: React.MouseEvent | VideoProject, maybeVideo?: VideoProject) => {
-    const videoToDelete = maybeVideo || (eOrVideo as VideoProject);
-    if ('stopPropagation' in eOrVideo) {
-      eOrVideo.stopPropagation();
-    }
-
-    if (!confirm(`Are you sure you want to delete "${videoToDelete.title}"?`)) {
-      return;
-    }
-
-    try {
-      const res = await fetch(`/api/videos/${videoToDelete.id}`, {
-        method: 'DELETE'
-      });
-
-      if (res.ok) {
-        setVideoList((prev) => prev.filter((v) => v.id !== videoToDelete.id));
-        if (selectedVideo?.id === videoToDelete.id) {
-          setSelectedVideo(null);
-        }
-      } else {
-        alert('Failed to delete video.');
-      }
-    } catch (err) {
-      alert('Error deleting video.');
-    }
-  };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0A0A0C] text-neutral-100 selection:bg-blue-500 selection:text-white">
+    <div className="flex flex-col min-h-screen bg-[#040406] text-neutral-100 selection:bg-blue-500 selection:text-white relative overflow-hidden">
+      
+      {/* Black/Dark Fade Ambient Background Layers */}
+      <div className="fixed inset-0 pointer-events-none -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(59,130,246,0.12),rgba(0,0,0,0))]"></div>
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(147,51,234,0.06),rgba(0,0,0,0))] blur-3xl"></div>
+        <div className="absolute bottom-0 inset-x-0 h-96 bg-gradient-to-t from-black via-[#040406] to-transparent"></div>
+      </div>
+
       {/* 1. Header / Navbar */}
-      <Navbar
-        onOpenUpload={() => setIsUploadOpen(true)}
-        isDeleteMode={isDeleteMode}
-        onToggleDeleteMode={() => setIsDeleteMode(!isDeleteMode)}
-      />
+      <Navbar />
 
       <main className="flex-grow">
         {/* 2. Hero Section */}
@@ -89,17 +56,13 @@ export default function PortfolioHome({
           onOpenVideo={(video) => setSelectedVideo(video)}
         />
 
-        {/* 4. Complete Portfolio Section with Upload & Delete Actions */}
+        {/* 4. Complete Portfolio Section */}
         <PortfolioSection
           videos={videoList}
           onOpenVideo={(video) => setSelectedVideo(video)}
-          onOpenUpload={() => setIsUploadOpen(true)}
-          isDeleteMode={isDeleteMode}
-          onToggleDeleteMode={() => setIsDeleteMode(!isDeleteMode)}
-          onDeleteVideo={(e, video) => handleDeleteVideo(e, video)}
         />
 
-        {/* 5. Services & Editing Capabilities */}
+        {/* 5. Services & Capabilities */}
         <ServicesSection />
 
         {/* 6. Proven Retention Results */}
@@ -115,20 +78,12 @@ export default function PortfolioHome({
       {/* 9. Footer */}
       <Footer />
 
-      {/* 10. Direct Video Upload Modal */}
-      <DirectUploadModal
-        isOpen={isUploadOpen}
-        onClose={() => setIsUploadOpen(false)}
-        onVideoCreated={handleVideoCreated}
-      />
-
-      {/* 11. Fullscreen Cinematic Video Player Modal with Delete Button */}
+      {/* 10. Fullscreen Cinematic Video Player Modal */}
       <VideoPlayerModal
         video={selectedVideo}
         allVideos={videoList}
         onClose={() => setSelectedVideo(null)}
         onSelectVideo={(video) => setSelectedVideo(video)}
-        onDeleteVideo={(video) => handleDeleteVideo(video)}
       />
     </div>
   );

@@ -337,12 +337,12 @@ export default function AdminVideoModal({
                 onChange={(e) => setCurrentVideo({ ...currentVideo, category: e.target.value as any })}
                 className="w-full px-4 py-3 text-xs sm:text-sm bg-neutral-50 border border-neutral-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-neutral-900 cursor-pointer"
               >
-                <option value="Lifestyle">Lifestyle</option>
-                <option value="Product">Product</option>
-                <option value="Travel">Travel</option>
-                <option value="Fashion">Fashion</option>
-                <option value="Food">Food</option>
-                <option value="Educational">Educational</option>
+                <option value="AI & Brand Commercials">AI & Brand Commercials</option>
+                <option value="Viral Shorts & Reels">Viral Shorts & Reels</option>
+                <option value="Upcoming Project">Upcoming Project</option>
+                <option value="Product Ads & UGC">Product Ads & UGC</option>
+                <option value="Cinematic Visuals & VFX">Cinematic Visuals & VFX</option>
+                <option value="Personal Brand">Personal Brand</option>
               </select>
             </div>
           </div>

@@ -46,6 +46,14 @@ export default function AdminDashboard({
     }
   }, []);
 
+  const getAuthHeaders = () => {
+    const token = localStorage.getItem('piyush_admin_auth') || 'piyush2026';
+    return {
+      'Authorization': `Bearer ${token}`,
+      'Content-Type': 'application/json'
+    };
+  };
+
   const showNotice = (msg: string) => {
     setActionNotice(msg);
     setTimeout(() => setActionNotice(''), 3500);
@@ -89,10 +97,15 @@ export default function AdminDashboard({
     if (!confirm('Are you sure you want to delete this video project?')) return;
 
     try {
-      const res = await fetch(`/api/videos/${id}`, { method: 'DELETE' });
+      const res = await fetch(`/api/videos/${id}`, {
+        method: 'DELETE',
+        headers: getAuthHeaders()
+      });
       if (res.ok) {
         setVideos((prev) => prev.filter((v) => v.id !== id));
         showNotice('Video successfully deleted.');
+      } else {
+        alert('Failed to delete video.');
       }
     } catch (err) {
       alert('Failed to delete video.');
@@ -104,7 +117,7 @@ export default function AdminDashboard({
     try {
       const res = await fetch(`/api/videos/${v.id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: getAuthHeaders(),
         body: JSON.stringify({ isFeatured: isFeat, featured: isFeat })
       });
       if (res.ok) {
@@ -123,7 +136,7 @@ export default function AdminDashboard({
     try {
       const res = await fetch(`/api/videos/${v.id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: getAuthHeaders(),
         body: JSON.stringify({ isPublished: nextPublished })
       });
       if (res.ok) {
@@ -145,7 +158,7 @@ export default function AdminDashboard({
       if (isCreatingNew) {
         const res = await fetch('/api/videos', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: getAuthHeaders(),
           body: JSON.stringify(currentVideo)
         });
         const saved = await res.json();
@@ -159,7 +172,7 @@ export default function AdminDashboard({
       } else {
         const res = await fetch(`/api/videos/${currentVideo.id}`, {
           method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
+          headers: getAuthHeaders(),
           body: JSON.stringify(currentVideo)
         });
         const updated = await res.json();
@@ -186,7 +199,7 @@ export default function AdminDashboard({
     try {
       const res = await fetch('/api/stats', {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: getAuthHeaders(),
         body: JSON.stringify(stats)
       });
       if (res.ok) {
@@ -201,15 +214,29 @@ export default function AdminDashboard({
     }
   };
 
-  const handleUpdateInquiry = (id: string, status: 'new' | 'read' | 'replied') => {
+  const handleUpdateInquiry = async (id: string, status: 'new' | 'read' | 'replied') => {
     setInquiries((prev) =>
       prev.map((inq) => (inq.id === id ? { ...inq, status } : inq))
     );
+    try {
+      await fetch('/api/inquiries', {
+        method: 'PUT',
+        headers: getAuthHeaders(),
+        body: JSON.stringify({ id, status })
+      });
+    } catch {}
     showNotice(`Inquiry marked as ${status}.`);
   };
 
-  const handleDeleteInquiry = (id: string) => {
+  const handleDeleteInquiry = async (id: string) => {
+    if (!confirm('Are you sure you want to delete this inquiry?')) return;
     setInquiries((prev) => prev.filter((i) => i.id !== id));
+    try {
+      await fetch(`/api/inquiries?id=${id}`, {
+        method: 'DELETE',
+        headers: getAuthHeaders()
+      });
+    } catch {}
     showNotice('Inquiry removed.');
   };
 
@@ -218,7 +245,7 @@ export default function AdminDashboard({
   }
 
   return (
-    <div className="min-h-screen bg-[#0A0A0C] text-neutral-100 flex flex-col">
+    <div className="min-h-screen bg-[#060608] text-neutral-100 flex flex-col">
       <AdminHeader
         activeTab={activeTab}
         setActiveTab={setActiveTab}

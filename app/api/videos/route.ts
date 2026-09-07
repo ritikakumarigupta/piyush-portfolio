@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getVideos, createVideo, reorderVideos } from '@/lib/db';
+import { isAuthorizedAdmin } from '@/lib/auth';
 
 export async function GET(request: NextRequest) {
   try {
@@ -31,6 +32,10 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
+    if (!isAuthorizedAdmin(request)) {
+      return NextResponse.json({ error: 'Unauthorized. Admin access required.' }, { status: 401 });
+    }
+
     const body = await request.json();
 
     if (body.action === 'reorder') {
@@ -46,7 +51,7 @@ export async function POST(request: NextRequest) {
       title: body.title,
       category: body.category,
       videoUrl: body.videoUrl || '',
-      thumbnailUrl: body.thumbnailUrl || 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop',
+      thumbnailUrl: body.thumbnailUrl || body.videoUrl || '',
       duration: body.duration || '0:30',
       views: body.views || '0',
       viewsCount: body.viewsCount || parseInt(body.views) || 0,
@@ -54,7 +59,7 @@ export async function POST(request: NextRequest) {
       description: body.description || '',
       editingStyle: body.editingStyle || 'Kinetic cuts, Sound design',
       toolsUsed: Array.isArray(body.toolsUsed) ? body.toolsUsed : ['Premiere Pro'],
-      clientName: body.clientName || 'Private Client',
+      clientName: body.clientName || 'Piyush Studio',
       results: body.results || 'High retention reel',
       isFeatured: Boolean(body.isFeatured),
       isPublished: body.isPublished !== undefined ? Boolean(body.isPublished) : true
