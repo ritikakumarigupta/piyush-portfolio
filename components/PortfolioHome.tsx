@@ -35,20 +35,20 @@ export default function PortfolioHome({
   const [selectedVideo, setSelectedVideo] = useState<VideoProject | null>(null);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#040406] text-neutral-100 selection:bg-blue-500 selection:text-white relative overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-[#000000] text-neutral-100 selection:bg-blue-500 selection:text-white relative overflow-hidden">
       
-      {/* Black/Dark Fade Ambient Background Layers */}
+      {/* Deep Black / Pitch Dark Fade Ambient Background Layers */}
       <div className="fixed inset-0 pointer-events-none -z-10">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(59,130,246,0.12),rgba(0,0,0,0))]"></div>
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(147,51,234,0.06),rgba(0,0,0,0))] blur-3xl"></div>
-        <div className="absolute bottom-0 inset-x-0 h-96 bg-gradient-to-t from-black via-[#040406] to-transparent"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(37,99,235,0.12),rgba(0,0,0,0))]"></div>
+        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(147,51,234,0.05),rgba(0,0,0,0))] blur-3xl"></div>
+        <div className="absolute bottom-0 inset-x-0 h-96 bg-gradient-to-t from-black via-[#000000] to-transparent"></div>
       </div>
 
       {/* 1. Header / Navbar */}
       <Navbar />
 
       <main className="flex-grow">
-        {/* 2. Hero Section with Live Rotating Video Showcase */}
+        {/* 2. Hero Section with Live Rotating Video Showcase (All 28 Videos) */}
         <Hero stats={stats} videos={videoList} />
 
         {/* 3. Featured Work Spotlight */}

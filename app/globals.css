@@ -14,10 +14,11 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     touch-action: manipulation;
+    background-color: #000000;
   }
   
   body {
-    background-color: #040406;
+    background-color: #000000;
     color: #F4F4F5;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     overflow-x: hidden;
@@ -46,10 +47,10 @@
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #121216;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #1f1f23;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -106,7 +107,7 @@
 
 /* Glassmorphism Classes */
 .glass-panel {
-  background: rgba(18, 18, 24, 0.75);
+  background: rgba(12, 12, 16, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -116,14 +117,14 @@
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-panel-hover:hover {
-  background: rgba(26, 26, 34, 0.9);
+  background: rgba(20, 20, 26, 0.95);
   border-color: rgba(255, 255, 255, 0.18);
   transform: translateY(-3px);
-  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.8);
 }
 
 .glass-nav {
-  background-color: rgba(10, 10, 14, 0.85);
+  background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);

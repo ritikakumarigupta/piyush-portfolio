@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { CheckCircle } from 'lucide-react';
 import { VideoProject, SiteStats, Testimonial, ContactInquiry, SiteSettings } from '@/lib/types';
 import AdminLogin from './admin/AdminLogin';
@@ -30,7 +30,7 @@ export default function AdminDashboard({
 
   const [videos, setVideos] = useState<VideoProject[]>(initialVideos);
   const [stats, setStats] = useState<SiteStats>(initialStats);
-  const [inquiries, setInquiries] = useState<ContactInquiry[]>(initialInquiries);
+  const [inquiries, setInquiries] = useState<ContactInquiry[]>(initialInquiries || []);
   const [actionNotice, setActionNotice] = useState('');
 
   // Modal State
@@ -58,6 +58,54 @@ export default function AdminDashboard({
     setActionNotice(msg);
     setTimeout(() => setActionNotice(''), 3500);
   };
+
+  // Sync and fetch inquiries from server & localStorage
+  const refreshInquiries = useCallback(async () => {
+    let combined: ContactInquiry[] = [];
+
+    // 1. Read from localStorage
+    try {
+      const local = JSON.parse(localStorage.getItem('piyush_client_inquiries') || '[]');
+      if (Array.isArray(local)) {
+        combined = [...local];
+      }
+    } catch {}
+
+    // 2. Fetch from API
+    try {
+      const res = await fetch('/api/inquiries', {
+        headers: getAuthHeaders(),
+        cache: 'no-store'
+      });
+      if (res.ok) {
+        const serverInquiries = await res.json();
+        if (Array.isArray(serverInquiries)) {
+          // Merge deduplicated
+          const map = new Map();
+          serverInquiries.forEach((item: ContactInquiry) => map.set(item.id, item));
+          combined.forEach((item: ContactInquiry) => {
+            if (!map.has(item.id)) {
+              map.set(item.id, item);
+            }
+          });
+          combined = Array.from(map.values());
+        }
+      }
+    } catch {}
+
+    // Sort by createdAt descending
+    combined.sort((a, b) => new Date(b.createdAt || 0).getTime() - new Date(a.createdAt || 0).getTime());
+
+    setInquiries(combined);
+    showNotice(`Inquiries refreshed. Total: ${combined.length}`);
+  }, []);
+
+  // Fetch inquiries when user opens inquiries tab
+  useEffect(() => {
+    if (isAuthenticated) {
+      refreshInquiries();
+    }
+  }, [isAuthenticated, activeTab, refreshInquiries]);
 
   const handleLogout = () => {
     localStorage.removeItem('piyush_admin_auth');
@@ -225,6 +273,13 @@ export default function AdminDashboard({
         body: JSON.stringify({ id, status })
       });
     } catch {}
+
+    try {
+      const local = JSON.parse(localStorage.getItem('piyush_client_inquiries') || '[]');
+      const updated = local.map((i: any) => (i.id === id ? { ...i, status } : i));
+      localStorage.setItem('piyush_client_inquiries', JSON.stringify(updated));
+    } catch {}
+
     showNotice(`Inquiry marked as ${status}.`);
   };
 
@@ -237,7 +292,35 @@ export default function AdminDashboard({
         headers: getAuthHeaders()
       });
     } catch {}
+
+    try {
+      const local = JSON.parse(localStorage.getItem('piyush_client_inquiries') || '[]');
+      const updated = local.filter((i: any) => i.id !== id);
+      localStorage.setItem('piyush_client_inquiries', JSON.stringify(updated));
+    } catch {}
+
     showNotice('Inquiry removed.');
+  };
+
+  const handleAddTestInquiry = () => {
+    const testInq: ContactInquiry = {
+      id: `inq-test-${Date.now()}`,
+      name: 'Rohan Verma (Sample Client)',
+      email: 'rohan.brand@gmail.com',
+      phone: '+91 9876543210',
+      projectType: 'Instagram Reels / YouTube Shorts',
+      budgetRange: '$500 - $1,500',
+      message: 'Hi Piyush, I loved your portfolio! We need 15 viral reels edited for our upcoming brand launch next month.',
+      createdAt: new Date().toISOString(),
+      status: 'new'
+    };
+
+    setInquiries((prev) => [testInq, ...prev]);
+    try {
+      const local = JSON.parse(localStorage.getItem('piyush_client_inquiries') || '[]');
+      localStorage.setItem('piyush_client_inquiries', JSON.stringify([testInq, ...local]));
+    } catch {}
+    showNotice('Sample lead added for testing!');
   };
 
   if (!isAuthenticated) {
@@ -245,7 +328,7 @@ export default function AdminDashboard({
   }
 
   return (
-    <div className="min-h-screen bg-[#060608] text-neutral-100 flex flex-col">
+    <div className="min-h-screen bg-[#040406] text-neutral-100 flex flex-col">
       <AdminHeader
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -277,6 +360,8 @@ export default function AdminDashboard({
         {activeTab === 'inquiries' && (
           <AdminInquiriesTab
             inquiries={inquiries}
+            onRefresh={refreshInquiries}
+            onAddTestInquiry={handleAddTestInquiry}
             onUpdateInquiry={handleUpdateInquiry}
             onDeleteInquiry={handleDeleteInquiry}
           />
