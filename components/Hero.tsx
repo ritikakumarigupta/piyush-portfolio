@@ -1,35 +1,71 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { 
   Play, 
   ArrowUpRight, 
-  Download, 
   Eye, 
   Sparkles, 
   Volume2, 
   VolumeX, 
   TrendingUp, 
-  CheckCircle, 
   Flame,
   Layers,
-  Award
+  ChevronLeft,
+  ChevronRight,
+  Film
 } from 'lucide-react';
-
-import { SiteStats } from '@/lib/types';
+import { VideoProject, SiteStats } from '@/lib/types';
 
 interface HeroProps {
   onPlayShowreel?: () => void;
   stats?: SiteStats;
+  videos?: VideoProject[];
 }
 
-export default function Hero({ onPlayShowreel, stats }: HeroProps) {
+export default function Hero({ onPlayShowreel, stats, videos = [] }: HeroProps) {
   const [heroVideoMuted, setHeroVideoMuted] = useState(true);
+  const [activeVideoIndex, setActiveVideoIndex] = useState(0);
   const heroVideoRef = useRef<HTMLVideoElement | null>(null);
+
+  // Filter valid published videos for live showcase
+  const showcaseVideos = videos.length > 0
+    ? videos.filter((v) => v.isPublished !== false)
+    : [
+        {
+          id: 'default-1',
+          title: 'Aurabella Luxury Brand Launch',
+          category: 'AI & Brand Commercials',
+          videoUrl: '/videos/aurabella-01.mp4',
+          client: 'Aurabella Skin',
+          views: '1.4M',
+          duration: '45s'
+        } as VideoProject
+      ];
+
+  const currentVideo = showcaseVideos[activeVideoIndex] || showcaseVideos[0];
 
   const displayViews = stats?.totalViews || '50M+';
   const displayProjects = stats?.videosEdited || '150+';
   const displayRetention = stats?.engagement || '88%+';
+
+  // Handle next/prev video navigation in showcase
+  const handleNextVideo = () => {
+    setActiveVideoIndex((prev) => (prev + 1) % showcaseVideos.length);
+  };
+
+  const handlePrevVideo = () => {
+    setActiveVideoIndex((prev) => (prev - 1 + showcaseVideos.length) % showcaseVideos.length);
+  };
+
+  // Switch video source and play smoothly
+  useEffect(() => {
+    if (heroVideoRef.current && currentVideo?.videoUrl) {
+      heroVideoRef.current.src = currentVideo.videoUrl;
+      heroVideoRef.current.load();
+      heroVideoRef.current.play().catch(() => {});
+    }
+  }, [activeVideoIndex, currentVideo?.videoUrl]);
 
   const toggleHeroSound = () => {
     if (heroVideoRef.current) {
@@ -94,7 +130,7 @@ export default function Hero({ onPlayShowreel, stats }: HeroProps) {
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black font-display tracking-tight text-white leading-[1.1]">
               I Edit Videos That Don't Just Look Good — They{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400">
-                Dominate Feeds & Command Millions of Views.
+                Dominate Feeds &amp; Command Millions of Views.
               </span>
             </h1>
 
@@ -136,7 +172,7 @@ export default function Hero({ onPlayShowreel, stats }: HeroProps) {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-bold text-neutral-950 bg-gradient-to-r from-blue-400 via-indigo-200 to-white hover:opacity-95 rounded-xl transition-all shadow-xl shadow-blue-500/25 active:scale-[0.98] min-h-[44px] touch-manipulation"
               >
                 <Play className="w-4 h-4 fill-neutral-950" />
-                <span>Explore 28+ Videos</span>
+                <span>Explore {videos.length > 0 ? `${videos.length}+` : 'All'} Videos</span>
               </a>
 
               <a
@@ -159,53 +195,71 @@ export default function Hero({ onPlayShowreel, stats }: HeroProps) {
 
           </div>
 
-          {/* Right Column (5 cols): Interactive Floating Reel Showcase Card */}
+          {/* Right Column (5 cols): Interactive Floating Reel Showcase Card that Auto-rotates & Plays All Videos */}
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-9-16 rounded-3xl overflow-hidden glass-panel border border-white/[0.15] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] group">
               
-              {/* Video Element with clean URL */}
+              {/* Dynamic Video Element */}
               <video
                 ref={heroVideoRef}
-                src="/videos/aurabella-01.mp4"
+                src={currentVideo?.videoUrl || '/videos/aurabella-01.mp4'}
                 autoPlay
-                loop
-                muted={heroVideoMuted}
                 playsInline
-                className="w-full h-full object-cover"
+                muted={heroVideoMuted}
+                onEnded={handleNextVideo}
+                className="w-full h-full object-cover transition-opacity duration-300"
               />
 
               {/* Top Video Overlay Badge */}
-              <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 flex items-center justify-between z-10">
-                <span className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] sm:text-[11px] font-bold text-white flex items-center gap-1.5 border border-white/20">
+              <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 flex items-center justify-between z-20">
+                <span className="px-2.5 py-1 rounded-full bg-black/70 backdrop-blur-md text-[10px] sm:text-[11px] font-bold text-white flex items-center gap-1.5 border border-white/20">
                   <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                  LIVE SHOWCASE
+                  LIVE SHOWCASE ({activeVideoIndex + 1}/{showcaseVideos.length})
                 </span>
 
-                {/* Sound Button */}
+                {/* Sound Toggle Button */}
                 <button
                   onClick={toggleHeroSound}
-                  className="p-2 sm:p-2.5 rounded-full bg-black/70 backdrop-blur-md text-white hover:bg-black/90 transition-colors border border-white/20 touch-manipulation min-w-[38px] min-h-[38px] flex items-center justify-center cursor-pointer"
+                  className="p-2 sm:p-2.5 rounded-full bg-black/70 backdrop-blur-md text-white hover:bg-black/90 transition-colors border border-white/20 touch-manipulation min-w-[36px] min-h-[36px] flex items-center justify-center cursor-pointer"
                   title={heroVideoMuted ? "Click to Unmute" : "Mute Video"}
                 >
-                  {heroVideoMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4 text-blue-400" />}
+                  {heroVideoMuted ? <VolumeX className="w-4 h-4 text-neutral-400" /> : <Volume2 className="w-4 h-4 text-blue-400" />}
                 </button>
               </div>
 
-              {/* Bottom Video Info Card */}
+              {/* Prev / Next Quick Switching Floating Buttons */}
+              <button
+                onClick={handlePrevVideo}
+                className="absolute left-2.5 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md border border-white/10 opacity-70 group-hover:opacity-100 transition-opacity z-20 cursor-pointer"
+                title="Previous Video in Showcase"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+
+              <button
+                onClick={handleNextVideo}
+                className="absolute right-2.5 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md border border-white/10 opacity-70 group-hover:opacity-100 transition-opacity z-20 cursor-pointer"
+                title="Next Video in Showcase"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+
+              {/* Bottom Video Info Card (Dynamically updates per video!) */}
               <div className="absolute bottom-0 inset-x-0 p-3.5 sm:p-4 bg-gradient-to-t from-black via-black/80 to-transparent z-10 space-y-1.5">
                 <div className="flex items-center gap-2">
-                  <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-blue-500/30 text-blue-300 border border-blue-500/40">
-                    AI Commercial
+                  <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-blue-500/30 text-blue-300 border border-blue-500/40 truncate max-w-[130px]">
+                    {currentVideo?.category || 'AI Commercial'}
                   </span>
                   <span className="text-[10px] sm:text-[11px] text-neutral-300 font-medium truncate">
-                    Aurabella Luxury Brand
+                    {currentVideo?.clientName || currentVideo?.client || 'Piyush Studio'}
                   </span>
                 </div>
-                <h3 className="text-xs sm:text-sm font-bold text-white leading-tight">
-                  High-Converting 3D Visual & AI Motion Master
+
+                <h3 className="text-xs sm:text-sm font-bold text-white leading-tight line-clamp-1">
+                  {currentVideo?.title}
                 </h3>
 
-                {/* Equalizer Wave Bars */}
+                {/* Equalizer Wave Bars & Views / Duration */}
                 <div className="flex items-center justify-between pt-1">
                   <div className="flex items-end gap-1 h-4 sm:h-5">
                     <span className="w-1 bg-blue-400 rounded-full bar-1"></span>
@@ -213,8 +267,8 @@ export default function Hero({ onPlayShowreel, stats }: HeroProps) {
                     <span className="w-1 bg-purple-400 rounded-full bar-3"></span>
                     <span className="w-1 bg-cyan-400 rounded-full bar-4"></span>
                   </div>
-                  <span className="text-[9px] sm:text-[10px] font-semibold text-neutral-400">
-                    1.4M Views • 45s
+                  <span className="text-[9px] sm:text-[10px] font-semibold text-neutral-300">
+                    {currentVideo?.views || '1.2M'} Views • {currentVideo?.duration || '30s'}
                   </span>
                 </div>
               </div>
@@ -228,7 +282,7 @@ export default function Hero({ onPlayShowreel, stats }: HeroProps) {
         <div className="mt-10 sm:mt-14 pt-4 sm:pt-6 border-t border-white/[0.08] overflow-hidden">
           <div className="text-center mb-2.5 sm:mb-3">
             <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-neutral-500">
-              TRUSTED CONTENT CATEGORIES & HIGH-IMPACT NICHES
+              TRUSTED CONTENT CATEGORIES &amp; HIGH-IMPACT NICHES
             </span>
           </div>
 

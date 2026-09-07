@@ -11,6 +11,7 @@ import AboutSection from './AboutSection';
 import ContactSection from './ContactSection';
 import Footer from './Footer';
 import VideoPlayerModal from './VideoPlayerModal';
+import ThemeCustomizer from './ThemeCustomizer';
 import { VideoProject, SiteStats, Testimonial, ServiceItem, SiteSettings } from '@/lib/types';
 
 interface PortfolioHomeProps {
@@ -47,8 +48,8 @@ export default function PortfolioHome({
       <Navbar />
 
       <main className="flex-grow">
-        {/* 2. Hero Section */}
-        <Hero stats={stats} />
+        {/* 2. Hero Section with Live Rotating Video Showcase */}
+        <Hero stats={stats} videos={videoList} />
 
         {/* 3. Featured Work Spotlight */}
         <FeaturedWork
@@ -78,7 +79,10 @@ export default function PortfolioHome({
       {/* 9. Footer */}
       <Footer />
 
-      {/* 10. Fullscreen Cinematic Video Player Modal */}
+      {/* 10. Live Theme Color Customizer */}
+      <ThemeCustomizer />
+
+      {/* 11. Fullscreen Cinematic Video Player Modal */}
       <VideoPlayerModal
         video={selectedVideo}
         allVideos={videoList}
