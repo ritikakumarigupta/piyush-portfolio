@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 :root {
+  --theme-primary: #EF4444;
+  --theme-secondary: #F87171;
+  --theme-glow: rgba(239, 68, 68, 0.4);
+  --theme-rgb: 239, 68, 68;
+}
+
+[data-theme="blue"] {
   --theme-primary: #3B82F6;
   --theme-secondary: #60A5FA;
   --theme-glow: rgba(59, 130, 246, 0.4);

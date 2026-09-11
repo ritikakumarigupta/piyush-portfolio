@@ -80,7 +80,7 @@ export default function ThemeCustomizer() {
     if (saved && THEME_OPTIONS.some((t) => t.id === saved)) {
       applyTheme(saved);
     } else {
-      applyTheme('blue');
+      applyTheme('crimson');
     }
   }, []);
 
